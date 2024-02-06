@@ -1,7 +1,18 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
+import './style.css';
 
+
+
+const AppInstace = createApp(App)
+//Packages
+import Landing from './packages/Landing';
+
+
+const option = {router}
+
+AppInstace.use(Landing, option);
 
 // Vuetify
 import 'vuetify/styles'
@@ -14,4 +25,4 @@ const vuetify = createVuetify({
   directives,
 });
 
-createApp(App).use(router).use(vuetify).mount('#app')
+AppInstace.use(router).use(vuetify).mount('#app')

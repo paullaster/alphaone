@@ -1,13 +1,15 @@
 <template>
-  <div>
-    <p>App</p>
-  </div>
+  <v-app>
+    <v-main>
+      <RouterView />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {
+
+}
 </script>
 
 <style lang="sass" scoped>
