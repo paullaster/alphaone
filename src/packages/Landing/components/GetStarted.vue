@@ -1,5 +1,5 @@
 <template>
-    <v-card elevation="2" color="#000080" height="100vh" class="d-flex justify-center align-center px-2">
+    <v-card elevation="2" color="#000080" height="100vh" class="d-flex justify-center align-center px-2" style="position: relative;">
         <v-card-items></v-card-items>
         <v-row>
             <v-col cols="12">
@@ -20,13 +20,12 @@
                     </v-row>
                 </v-form>
             </v-col>
-            <v-cols class="d-flex" plain>
-                <v-card-text>New here?</v-card-text>
-                <v-btn>
-                    create account
-                </v-btn>
+            <v-cols class="d-flex align-items: center">
+                <v-btn class="ml--2 font-weight-light text-capitalize text-left" variant="plain">New here? create
+                    account</v-btn>
             </v-cols>
         </v-row>
+        <v-btn icon="mdi-arrow-left"></v-btn>
     </v-card>
 </template>
 
