@@ -24,7 +24,7 @@
                 </v-btn>
             </v-cols>
         </v-row>
-        <v-btn icon="mdi-arrow-left" class="backBtnPosition" @click="$router.back()" v-if="authAction.type !== 'confirm'"></v-btn>
+        <v-btn icon="mdi-arrow-left" class="backBtnPosition" @click="$router.back()" v-if="authOption.type !== 'confirm'"></v-btn>
     </v-card>
 </template>
 
