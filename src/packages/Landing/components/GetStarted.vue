@@ -25,7 +25,7 @@
                     account</v-btn>
             </v-cols>
         </v-row>
-        <v-btn icon="mdi-arrow-left"></v-btn>
+        <v-btn icon="mdi-arrow-left" class="backBtnPosition"></v-btn>
     </v-card>
 </template>
 
@@ -36,4 +36,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.backBtnPosition {
+    background-color: red;
+    position: absolute;
+    bottom: 4%;
+}
+</style>
