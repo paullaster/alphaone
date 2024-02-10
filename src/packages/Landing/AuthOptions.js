@@ -12,6 +12,7 @@ export default [
                 placeholder: 'johndoe@gmail.com',
                 required: true,
                 hint: '',
+                value: 'email',
             },
             {
                 id: uuidv4(),
@@ -19,7 +20,8 @@ export default [
                 placeholder: '',
                 type: 'password',
                 required: true,
-                hint: 'Enter your password to access this site'
+                hint: 'Enter your password to access this site',
+                value: 'password',
             }
         ],
         button: {
@@ -42,6 +44,7 @@ export default [
                 placeholder: 'johndoe@gmail.com',
                 required: true,
                 hint: '',
+                value: 'email',
             },
 
         ],
@@ -65,6 +68,7 @@ export default [
                 required: true,
                 hint: '',
                 placeholder: 'johndoe@gmail.com',
+                value: 'email',
             },
             {
                 id: uuidv4(),
@@ -73,6 +77,7 @@ export default [
                 required: true,
                 placeholder: 'John Doe',
                 hint: '',
+                value: 'name',
             },
             {
                 id: uuidv4(),
@@ -81,6 +86,7 @@ export default [
                 placeholder: '',
                 required: true,
                 hint: '',
+                value: 'password',
             },
             {
                 id: uuidv4(),
@@ -89,6 +95,7 @@ export default [
                 placeholder: '',
                 required: true,
                 hint: '',
+                value: 'confirmPassword',
             },
         ],
         button: {
