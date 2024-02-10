@@ -21,6 +21,9 @@ export const useAuthStore = defineStore('auth', {
                 method: 'POST'
             })
             .then((res) => {
+                this.toast.success(res.message);
+            })
+            .catch((error) => {
                 
             })
         }
