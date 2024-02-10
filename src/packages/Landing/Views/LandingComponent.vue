@@ -4,7 +4,7 @@
             <v-card-actions>
                 <v-btn size="large" rounded="lg" elevation="4" to="/getstarted" color="black" class="bg-white">
                     get started
-                    <v-icon icon="mdi-arrow-left"></v-icon>
+                    <v-icon icon="mdi-arrow-right"></v-icon>
                 </v-btn>
             </v-card-actions>
         </v-card>

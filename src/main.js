@@ -15,6 +15,7 @@ const option = {router}
 AppInstace.use(Landing, option);
 
 // Vuetify
+import vuetify from './plugins/vuetify';
 
 
 AppInstace.use(router).use(vuetify).mount('#app')

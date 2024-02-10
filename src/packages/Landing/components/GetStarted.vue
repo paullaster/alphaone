@@ -25,7 +25,7 @@
                     account</v-btn>
             </v-cols>
         </v-row>
-        <v-btn icon="mdi-arrow-left" class="backBtnPosition"></v-btn>
+        <v-btn icon="mdi-arrow-left" class="backBtnPosition" @click="$router.back()"></v-btn>
     </v-card>
 </template>
 
@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 .backBtnPosition {
-    background-color: red;
+    background-color: #fff;
     position: absolute;
     bottom: 4%;
 }
