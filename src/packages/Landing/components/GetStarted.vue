@@ -8,10 +8,10 @@
                         <v-col cols="12">
                             <v-text-field label="Email address" placeholder="johndoe@gmail.com" type="email"></v-text-field>
                         </v-col>
-                        <v-col cols="12">
+                        <!-- <v-col cols="12">
                             <v-text-field label="Password" type="input"
                                 hint="Enter your password to access this site"></v-text-field>
-                        </v-col>
+                        </v-col> -->
                         <v-col cols="12">
                             <v-btn block class="transparent">
                                 Login
@@ -30,9 +30,13 @@
 </template>
 
 <script>
+import AuthOptions from '../AuthOptions'
 
 export default {
     name: 'GetStarted',
+    computed: {
+        
+    }
 }
 </script>
 
