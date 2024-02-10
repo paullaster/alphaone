@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { useGlobalStore } from "./useGlobal";
 import { _request } from "../http";
+import constants from "./constants";
 
 export const useAuthStore = defineStore('auth', {
     state: {},
@@ -15,7 +16,7 @@ export const useAuthStore = defineStore('auth', {
         confirmEmail(payload) {
             this.setAuthStoreLoader(true);
             _request({
-                url:
+                url: constants.sign
             })
         }
     }
