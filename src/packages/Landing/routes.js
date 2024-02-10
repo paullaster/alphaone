@@ -11,7 +11,7 @@ export default {
             component: LandingComponent
         },
         {
-            path: '/getstarted/:option',
+            path: '/getstarted/:option/:email?',
             name: 'getstarted',
             component: GetStarted
         }
