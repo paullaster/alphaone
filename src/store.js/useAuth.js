@@ -6,6 +6,8 @@ export const useAuthStore = defineStore('auth', {
         authStoregetter: (state) => (key) => state[key],
     },
     actions: {
-
+        confirmEmail(payload) {
+            
+        }
     }
 });
