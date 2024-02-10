@@ -16,7 +16,12 @@ export const useAuthStore = defineStore('auth', {
         confirmEmail(payload) {
             this.setAuthStoreLoader(true);
             _request({
-                url: constants.sign
+                url: constants.sign,
+                payload,
+                method: 'POST'
+            })
+            .then((res) => {
+                
             })
         }
     }
