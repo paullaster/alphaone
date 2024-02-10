@@ -33,6 +33,16 @@ import AuthOptions from '../AuthOptions'
 
 export default {
     name: 'GetStarted',
+    data() {
+        return {
+            formData: {
+                email: '',
+                password: '',
+                name: '',
+                confirmPassword: '',
+            }
+        }
+    },
     computed: {
         email() {
             const { email } = this.$route.params;
