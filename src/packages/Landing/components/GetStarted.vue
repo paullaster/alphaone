@@ -34,6 +34,10 @@ import AuthOptions from '../AuthOptions'
 export default {
     name: 'GetStarted',
     computed: {
+        email() {
+            const { email } = this.$route.params;
+            return email;
+        },
         authOption() {
             const { option } = this.$route.params;
             return AuthOptions.find((opt) => {
@@ -78,6 +82,9 @@ export default {
 
             }
         }
+    },
+    watch: {
+
     }
 }
 </script>
