@@ -35,7 +35,13 @@ export default {
     name: 'GetStarted',
     data() {
         return {
-            formData: {}
+            formData: {
+                email: '',
+                name:'',
+                password: '',
+                confirmPassword: '',
+
+            }
         }
     },
     computed: {
@@ -87,24 +93,6 @@ export default {
 
             }
         }
-    },
-    watch: {
-        email(newValue) {
-            if (newValue !== null || newValue !== undefined) {
-                this.formData.email = atob(newValue);
-            }
-        },
-        authOption: {
-            handler: (newValue) =>{
-            console.log('newValue ',newValue);
-            newValue?.fields.forEach((item) => {
-                console.log(item);
-                this.formData[item.value] = ''
-            });
-        },
-        deep: true,
-        immediate: true,
-    }
     },
 }
 </script>

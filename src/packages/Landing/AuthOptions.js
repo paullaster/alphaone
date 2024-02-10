@@ -63,15 +63,6 @@ export default [
         fields: [
             {
                 id: uuidv4(),
-                label: 'Emaill address',
-                type: 'email',
-                required: true,
-                hint: '',
-                placeholder: 'johndoe@gmail.com',
-                value: 'email',
-            },
-            {
-                id: uuidv4(),
                 label: 'Full name',
                 type: 'email',
                 required: true,
