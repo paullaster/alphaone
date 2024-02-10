@@ -8,7 +8,7 @@
                     <v-row>
                         <v-col cols="12" v-for="option in authOption.fields" :key="option.id">
                             <v-text-field :label="option.label" :placeholder="option.placeholder" :type="option.type"
-                                :required="option.required" :hint="option.hint" v-model="option.value"></v-text-field>
+                                :required="option.required" :hint="option.hint" v-model="formData[option.value]"></v-text-field>
                         </v-col>
                         <v-col cols="12">
                             <v-btn block class="transparent" @click="authAction">
@@ -94,10 +94,18 @@ export default {
                 this.formData.email = atob(newValue);
             }
         },
-        authOption(newValue) {
-            
-        }
+        authOption: {
+            handler: (newValue) =>{
+            console.log('newValue ',newValue);
+            newValue?.fields.forEach((item) => {
+                console.log(item);
+                this.formData[item.value] = ''
+            });
+        },
+        deep: true,
+        immediate: true,
     }
+    },
 }
 </script>
 
