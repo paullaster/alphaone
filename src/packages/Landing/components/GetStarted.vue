@@ -8,7 +8,7 @@
                     <v-row>
                         <v-col cols="12" v-for="option in authOption.fields" :key="option.id">
                             <v-text-field :label="option.label" :placeholder="option.placeholder" :type="option.type"
-                                :required="option.required" :hint="option.hint"></v-text-field>
+                                :required="option.required" :hint="option.hint" v-model=""></v-text-field>
                         </v-col>
                         <v-col cols="12">
                             <v-btn block class="transparent" @click="authAction">
