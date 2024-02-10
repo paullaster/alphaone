@@ -84,7 +84,11 @@ export default {
         }
     },
     watch: {
-
+        email(newValue) {
+            if (newValue !== null || newValue !== undefined) {
+                this.formData.email = atob(newValue);
+            }
+        }
     }
 }
 </script>
