@@ -1,20 +1,27 @@
 <template>
-    <v-card elevation="2" color="#000080" height="100vh" class="d-flex justify-center align-center px-2" style="position: relative;">
+    <v-card elevation="2" color="#000080" height="100vh" class="d-flex justify-center align-center px-2"
+        style="position: relative;">
         <v-card-items></v-card-items>
         <v-row>
             <v-col cols="12">
                 <v-form>
                     <v-row>
-                        <v-col cols="12">
-                            <v-text-field label="Email address" placeholder="johndoe@gmail.com" type="email"></v-text-field>
+                        <v-col cols="12" v-for="option in authOption.fields" :key="option.id">
+                            <v-text-field 
+                            :label="option.label" 
+                            :placeholder="option.placeholder" 
+                            :type="option.type" 
+                            :required="option.required"
+                            :hint="option.hint" 
+                            ></v-text-field>
                         </v-col>
                         <!-- <v-col cols="12">
                             <v-text-field label="Password" type="input"
                                 hint="Enter your password to access this site"></v-text-field>
                         </v-col> -->
                         <v-col cols="12">
-                            <v-btn block class="transparent">
-                                Login
+                            <v-btn block class="transparent" @click="authOption.button.action">
+                                {{authOption.button.caption}}
                             </v-btn>
                         </v-col>
                     </v-row>
@@ -35,7 +42,17 @@ import AuthOptions from '../AuthOptions'
 export default {
     name: 'GetStarted',
     computed: {
-        
+        authOption() {
+            const { option } = this.$route.params;
+            return AuthOptions.find((opt) => {
+                return opt.type === option;
+            });
+        }
+    },
+    methods: {
+        login() {
+            console.log("Loggd in");
+        }
     }
 }
 </script>

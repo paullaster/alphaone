@@ -7,17 +7,26 @@ export default [
         fields: [
             {
                 id: uuidv4(),
-                caption: 'Emaill address',
+                label: 'Emaill address',
                 type: 'email',
+                placeholder: 'johndoe@gmail.com',
                 required: true,
+                hint: '',
             },
             {
                 id: uuidv4(),
-                caption: 'Password',
+                label: 'Password',
+                placeholder: '',
                 type: 'password',
                 required: true,
+                hint: 'Enter your password to access this site'
             }
-        ]
+        ],
+        button: {
+            caption: 'Login',
+            icon: '',
+            action: 'login',
+        }
     },
     {
         id: uuidv4(),
