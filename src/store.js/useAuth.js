@@ -4,7 +4,11 @@ import { _request } from "../http";
 import constants from "./constants";
 
 export const useAuthStore = defineStore('auth', {
-    state: {},
+    state: () =>{
+        return {
+            
+        }
+    },
     getters: {
         authStoregetter: (state) => (key) => state[key],
     },

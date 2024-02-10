@@ -1,11 +1,13 @@
 import { defineStore } from "pinia";
 
 export const useGlobalStore = defineStore('global', {
-    state: {
-        loading: false,
+    state: () => {
+        return {
+            loading: false,
+        }
     },
     getters: {
-        globalStoreGetter: (state) => (key) => state[key],
+        // globalStoreGetter: (state) => (key) => state[key],
     },
     actions: {
         setApploading(payload) {

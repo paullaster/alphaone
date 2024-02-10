@@ -30,7 +30,7 @@
 
 <script>
 import AuthOptions from '../AuthOptions';
-import { useAuthStore } from '@/store/useAuth.js';
+import { useAuthStore } from '../../../store.js';
 
 export default {
     name: 'GetStarted',
