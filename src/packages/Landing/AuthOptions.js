@@ -60,16 +60,18 @@ export default [
         fields: [
             {
                 id: uuidv4(),
-                caption: 'Emaill address',
+                label: 'Emaill address',
                 type: 'email',
                 required: true,
                 hint: '',
+                placeholder: 'johndoe@gmail.com',
             },
             {
                 id: uuidv4(),
-                caption: 'Full name',
+                label: 'Full name',
                 type: 'email',
                 required: true,
+                placeholder: 'John Doe',
                 hint: '',
             },
             {
