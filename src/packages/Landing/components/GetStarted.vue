@@ -29,10 +29,16 @@
 </template>
 
 <script>
-import AuthOptions from '../AuthOptions'
+import AuthOptions from '../AuthOptions';
+import { useAuthStore } from '@/store/useAuth.js';
 
 export default {
     name: 'GetStarted',
+    setup() {
+        const authStore = useAuthStore();
+
+        return {authStore};
+    },
     data() {
         return {
             formData: {
@@ -64,7 +70,7 @@ export default {
                     console.log("Loggd in");
                     return;
                 case 'signup':
-                    console.log('Sign up');
+                    this.authStore.confirmEmail();
                     return;
                 default: return;
 
