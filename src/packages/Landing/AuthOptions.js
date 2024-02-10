@@ -43,7 +43,7 @@ export default [
                 required: true,
                 hint: '',
             },
-            
+
         ],
         button: {
             caption: 'Sign up',
@@ -56,27 +56,43 @@ export default [
     },
     {
         id: uuidv4(),
-        type: 'confirm_email',
+        type: 'confirm',
         fields: [
             {
                 id: uuidv4(),
                 caption: 'Emaill address',
                 type: 'email',
                 required: true,
+                hint: '',
             },
             {
                 id: uuidv4(),
-                caption: 'Password',
-                type: 'password',
+                caption: 'Full name',
+                type: 'email',
                 required: true,
+                hint: '',
             },
             {
                 id: uuidv4(),
-                caption: 'Confirm password',
+                label: 'Password',
                 type: 'password',
+                placeholder: '',
                 required: true,
-            }
-            
-        ]
+                hint: '',
+            },
+            {
+                id: uuidv4(),
+                label: 'Confirm password',
+                type: 'password',
+                placeholder: '',
+                required: true,
+                hint: '',
+            },
+        ],
+        button: {
+            caption: 'Continue',
+            icon: '',
+        },
+        hasOptions: false,
     },
 ]
