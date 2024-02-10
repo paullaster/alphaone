@@ -70,7 +70,7 @@ export default {
                     console.log("Loggd in");
                     return;
                 case 'signup':
-                    this.authStore.confirmEmail();
+                    this.authStore.confirmEmail({email : this.formData.email});
                     return;
                 default: return;
 

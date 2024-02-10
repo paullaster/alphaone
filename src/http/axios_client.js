@@ -9,10 +9,10 @@ export const _request = axios.create({
 
 
 const requestInterceptor = (config) => {
-    if (AuthService.check()) {
-        config.headers.Authorization = `Bearer ${AuthService.Token()}`;
+    // if (AuthService.check()) {
+        // config.headers.Authorization = `Bearer ${AuthService.Token()}`;
         if (!config.headers.Accept && !config.headers['Content-Type'])config.headers['Content-Type'] = "Application/json" 
-    }
+    // }
     config.validateStatus = function (status) {
         return status >= 200 && status < 300;
     };

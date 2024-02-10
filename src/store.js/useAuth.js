@@ -6,7 +6,7 @@ import constants from "./constants";
 export const useAuthStore = defineStore('auth', {
     state: () =>{
         return {
-            
+
         }
     },
     getters: {
@@ -21,16 +21,35 @@ export const useAuthStore = defineStore('auth', {
             this.setAuthStoreLoader(true);
             _request({
                 url: constants.sign,
-                payload,
+                data: payload,
                 method: 'POST'
             })
             .then((res) => {
+                this.setAuthStoreLoader(false);
                 this.toast.success(res?.message);
             })
             .catch((error) => {
                 console.log(error)
+                this.setAuthStoreLoader(false);
                 this.toast.error(error?.message);
+            });
+        },
+        createApplication(payload) {
+            this.setAuthStoreLoader(true);
+            _request({
+                url: constants.createApplication,
+                data: payload,
+                method: 'POST',
             })
-        }
+            .then((res) => {
+                
+                this.setAuthStoreLoader(false);
+                this.toast.success(res?.message);
+            })
+            .catch((error) => {
+                this.setAuthStoreLoader(false);
+                this.toast.error(error?.message);
+            });
+        },
     }
 });

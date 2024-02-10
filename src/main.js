@@ -3,6 +3,7 @@ import App from './App.vue';
 import router from './router';
 import './style.css';
 import Vue3Toasity from "vue3-toastify";
+import "vue3-toastify/dist/index.css";
 
 
 
