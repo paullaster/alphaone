@@ -10,10 +10,6 @@
                             <v-text-field :label="option.label" :placeholder="option.placeholder" :type="option.type"
                                 :required="option.required" :hint="option.hint"></v-text-field>
                         </v-col>
-                        <!-- <v-col cols="12">
-                            <v-text-field label="Password" type="input"
-                                hint="Enter your password to access this site"></v-text-field>
-                        </v-col> -->
                         <v-col cols="12">
                             <v-btn block class="transparent" @click="authAction">
                                 {{ authOption?.button?.caption }}
@@ -28,7 +24,7 @@
                 </v-btn>
             </v-cols>
         </v-row>
-        <v-btn icon="mdi-arrow-left" class="backBtnPosition" @click="$router.back()"></v-btn>
+        <v-btn icon="mdi-arrow-left" class="backBtnPosition" @click="$router.back()" v-if="authAction.type !== 'confirm'"></v-btn>
     </v-card>
 </template>
 
