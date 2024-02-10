@@ -25,7 +25,10 @@ export default [
         button: {
             caption: 'Login',
             icon: '',
-            action: 'login',
+        },
+        hasOptions: true,
+        options: {
+            text: "New here? create account"
         }
     },
     {
@@ -34,12 +37,22 @@ export default [
         fields: [
             {
                 id: uuidv4(),
-                caption: 'Emaill address',
+                label: 'Emaill address',
                 type: 'email',
+                placeholder: 'johndoe@gmail.com',
                 required: true,
+                hint: '',
             },
             
-        ]
+        ],
+        button: {
+            caption: 'Sign up',
+            icon: '',
+        },
+        hasOptions: true,
+        options: {
+            text: "Already have an account? login"
+        }
     },
     {
         id: uuidv4(),
