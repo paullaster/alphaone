@@ -19,6 +19,9 @@ AppInstace.use(Vue3Toasity, {
     }
 });
 
+// ADD PINIA
+AppInstace.use(pinia);
+
 
 
 //Packages
@@ -36,4 +39,4 @@ import { pinia } from './plugins/pinia';
 import Dashboard from './packages/Dashboard';
 
 
-AppInstace.use(router).use(vuetify).use(pinia).mount('#app');
+AppInstace.use(router).use(vuetify).mount('#app');

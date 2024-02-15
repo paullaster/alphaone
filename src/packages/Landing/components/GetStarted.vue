@@ -78,7 +78,7 @@ export default {
             const type = this.authOption.type;
             switch (type) {
                 case 'login':
-                    console.log("Loggd in");
+                    this.authStore.login({email: this.formData.email, password: this.formData.password});
                     return;
                 case 'signup':
                     this.authStore.confirmEmail({ email: this.formData.email });
