@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { useGlobalStore } from "./useGlobal";
 import { _request } from "../http";
 import constants from "./constants";
+import { Auth } from "../utils";
 
 export const useAuthStore = defineStore('auth', {
     state: () =>{
@@ -60,7 +61,7 @@ export const useAuthStore = defineStore('auth', {
                 data: payload,
             })
             .then((res) => {
-                
+                Auth.Login()
             })
             .catch((error) => {
                 this.setAuthStoreLoader(false);
