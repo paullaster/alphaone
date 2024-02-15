@@ -60,7 +60,7 @@ export const useAuthStore = defineStore('auth', {
                 data: payload,
             })
             .then((res) => {
-
+                
             })
             .catch((error) => {
                 this.setAuthStoreLoader(false);
