@@ -76,7 +76,7 @@ export default {
                     return;
                 case 'confirm':
                     this.formData.email = atob(this.email);
-                    this.authStore.createApplication(this.formData);
+                    this.authStore.createAccount(this.formData);
                     return;
                 default: return;
 

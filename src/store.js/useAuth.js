@@ -34,7 +34,7 @@ export const useAuthStore = defineStore('auth', {
                 this.toast.error(error?.message);
             });
         },
-        createApplication(payload) {
+        createAccount(payload) {
             this.setAuthStoreLoader(true);
             _request({
                 url: constants.createApplication,
