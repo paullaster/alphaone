@@ -58,9 +58,6 @@ export default {
         }
     },
     computed: {
-        user() {
-            
-        },
         email() {
             const { email } = this.$route.params;
             return email;
@@ -123,7 +120,7 @@ export default {
                 this.$router.push({
                     name:'dashboard',
                     params: {
-                        user: this.user.id,
+                        user: ,
                     }
                 })
             }
