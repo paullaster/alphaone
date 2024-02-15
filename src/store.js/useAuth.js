@@ -46,7 +46,6 @@ export const useAuthStore = defineStore('auth', {
                 
                 this.setAuthStoreLoader(false);
                 this.toast.success(res?.message);
-                console.log(user);
                 this.login({email: res.data.email, password: atob(res.data.password)});
             })
             .catch((error) => {
@@ -62,6 +61,7 @@ export const useAuthStore = defineStore('auth', {
                 data: payload,
             })
             .then((res) => {
+                console.log(res);
                 Auth.Login(res.data.token);
                 this.setAuthStoreLoader(false);
                 this.toast.success(res?.message);

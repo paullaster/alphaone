@@ -1,13 +1,12 @@
 import { Storage } from "./WebStorage";
 import { APPNAME } from "../environment";
 class AuthService {
-    token = null;
-
     constructor() {
         this.token = Storage.GetFromWebStorage('session', `${APPNAME}_token`);
 
     }
     Login(token) {
+        console.log(token);
         this.token = token;
         Storage.RemoveFromStorage('session', `${APPNAME}_token`);
         Storage.storeToWebDB('session', `${APPNAME}_token`, token);
