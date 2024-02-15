@@ -121,7 +121,7 @@ export default {
                 this.$router.push({
                     name:'dashboard',
                     params: {
-                        user: Auth,
+                        user: Auth.User(),
                     }
                 })
             }
