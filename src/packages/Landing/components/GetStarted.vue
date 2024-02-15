@@ -67,6 +67,9 @@ export default {
             return AuthOptions.find((opt) => {
                 return opt.type === option;
             });
+        },
+        loggedIn() {
+            return this.authStore.authStoregetter('')
         }
     },
     methods: {
