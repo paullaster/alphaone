@@ -4,7 +4,7 @@ class AuthService {
     token = null;
 
     constructor() {
-        this.token = Storage.GetFromStorage('session', `${APPNAME}_token`);
+        this.token = Storage.GetFromWebStorage('session', `${APPNAME}_token`);
 
     }
     Login(token) {
