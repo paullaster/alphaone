@@ -1,5 +1,5 @@
 import WebStorage from "./WebStorage";
-import { APPNAME } from "../../environments";
+import { APPNAME } from "../environment";
 class AuthService {
     token = null;
 
