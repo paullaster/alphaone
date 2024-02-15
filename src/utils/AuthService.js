@@ -7,8 +7,7 @@ class AuthService {
 
     }
     Login(token) {
-        const newAuth = new AuthService();
-        newAuth.token = token;
+        this.token = token;
         Storage.RemoveFromStorage('session', `${APPNAME}_token`);
         Storage.storeToWebDB('session', `${APPNAME}_token`, token);
 
@@ -26,6 +25,6 @@ class AuthService {
 
 
 const Auth = new AuthService();
-Object.freeze(Auth);
+// Object.freeze(Auth);
 
 export { Auth };
