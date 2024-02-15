@@ -69,6 +69,9 @@ export const useAuthStore = defineStore('auth', {
                 this.setAuthStoreLoader(false);
                 this.toast.error(error?.message);
             });
+        },
+        logginStatus() {
+            return Auth.isLoggedIn();
         }
     }
 });
