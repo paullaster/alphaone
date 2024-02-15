@@ -7,8 +7,8 @@ class AuthService {
 
     }
     Login(token) {
-        console.log(token);
-        this.token = token;
+        const newAuth = new AuthService();
+        newAuth.token = token;
         Storage.RemoveFromStorage('session', `${APPNAME}_token`);
         Storage.storeToWebDB('session', `${APPNAME}_token`, token);
 
