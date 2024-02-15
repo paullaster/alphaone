@@ -25,6 +25,5 @@ class AuthService {
 
 
 const Auth = new AuthService();
-// Object.freeze(Auth);
 
 export { Auth };
