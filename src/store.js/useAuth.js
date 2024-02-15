@@ -45,11 +45,20 @@ export const useAuthStore = defineStore('auth', {
                 
                 this.setAuthStoreLoader(false);
                 this.toast.success(res?.message);
+
             })
             .catch((error) => {
                 this.setAuthStoreLoader(false);
                 this.toast.error(error?.message);
             });
         },
+        login(payload) {
+            this.setAuthStoreLoader(true);
+            _request({
+                method: 'POST',
+                url: constants.login,
+                data: payload,
+            })
+        }
     }
 });
