@@ -19,6 +19,9 @@ class AuthService {
     getToken() {
         return this.token;
     }
+    User() {
+        return atob(this.getToken());
+    }
 }
 
 
