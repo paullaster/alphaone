@@ -1,4 +1,4 @@
-import routes from "./routes";
+import routes from "./router";
 import { addLink } from "@/utils/addSidebarLinks";
 import links from "./links";
 

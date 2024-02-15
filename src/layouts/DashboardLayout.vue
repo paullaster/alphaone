@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        Dashboardd layout
     </div>
 </template>
 
