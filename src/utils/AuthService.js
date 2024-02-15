@@ -1,4 +1,4 @@
-import { Storage } from "./Storage";
+import { Storage } from "./WebStorage";
 import { APPNAME } from "../environment";
 class AuthService {
     token = null;
