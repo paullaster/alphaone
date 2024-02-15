@@ -32,7 +32,8 @@
 
 <script>
 import AuthOptions from '../AuthOptions';
-import { useAuthStore } from '../../../store.js';
+import { useAuthStore } from '@/store.js';
+import { Auth } from '@/utils';
 
 export default {
     name: 'GetStarted',
@@ -120,7 +121,7 @@ export default {
                 this.$router.push({
                     name:'dashboard',
                     params: {
-                        user: ,
+                        user: Auth,
                     }
                 })
             }
