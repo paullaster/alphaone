@@ -46,7 +46,7 @@ export const useAuthStore = defineStore('auth', {
                 
                 this.setAuthStoreLoader(false);
                 this.toast.success(res?.message);
-
+                
             })
             .catch((error) => {
                 this.setAuthStoreLoader(false);
@@ -62,6 +62,8 @@ export const useAuthStore = defineStore('auth', {
             })
             .then((res) => {
                 Auth.Login(res.data.token);
+                this.setAuthStoreLoader(false);
+                this.toast.success(res?.message);
             })
             .catch((error) => {
                 this.setAuthStoreLoader(false);
