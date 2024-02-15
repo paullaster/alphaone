@@ -59,6 +59,13 @@ export const useAuthStore = defineStore('auth', {
                 url: constants.login,
                 data: payload,
             })
+            .then((res) => {
+
+            })
+            .catch((error) => {
+                this.setAuthStoreLoader(false);
+                this.toast.error(error?.message);
+            });
         }
     }
 });
