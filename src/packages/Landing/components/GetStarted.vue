@@ -58,6 +58,9 @@ export default {
         }
     },
     computed: {
+        user() {
+            
+        },
         email() {
             const { email } = this.$route.params;
             return email;
