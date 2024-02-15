@@ -69,7 +69,7 @@ export default {
             });
         },
         loggedIn() {
-            return this.authStore.authStoregetter('')
+            return this.authStore.authStoregetter('isLoggedIn');
         }
     },
     methods: {
