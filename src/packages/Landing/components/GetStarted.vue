@@ -38,8 +38,8 @@ export default {
     name: 'GetStarted',
     beforeEnter: (to, from, next) => {
         next((v) => {
-
-        })
+            v.authStore.loginStatus();
+        });
     },
     setup() {
         const authStore = useAuthStore();
