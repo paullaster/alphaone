@@ -16,7 +16,7 @@ class AuthService {
     isLoggedIn() {
         return !!this.token;
     }
-    gettoken() {
+    getToken() {
         return this.token;
     }
 }
