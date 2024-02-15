@@ -36,6 +36,11 @@ import { useAuthStore } from '../../../store.js';
 
 export default {
     name: 'GetStarted',
+    beforeEnter: (to, from, next) => {
+        next((v) => {
+
+        })
+    },
     setup() {
         const authStore = useAuthStore();
 
