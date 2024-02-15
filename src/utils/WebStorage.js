@@ -76,4 +76,7 @@ class WebStorage {
 
 }
 const Storage = new WebStorage();
+
+Object.freeze(Storage);
+
 export { Storage };
