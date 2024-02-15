@@ -1,5 +1,5 @@
 export default {
     login: '',
     sign:  'users/auth/signup',
-    createApplication: '',
+    createUser: 'users/auth/create',
 }
