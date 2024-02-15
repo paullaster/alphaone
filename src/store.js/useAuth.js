@@ -7,7 +7,7 @@ import { Auth } from "../utils";
 export const useAuthStore = defineStore('auth', {
     state: () =>{
         return {
-
+            isLoggedIn: null,
         }
     },
     getters: {
@@ -71,7 +71,9 @@ export const useAuthStore = defineStore('auth', {
             });
         },
         loginStatus() {
-            return Auth.isLoggedIn();
+            this.$patch({
+                isLoggedIn: Auth.isLoggedIn()
+            });
         }
     }
 });
