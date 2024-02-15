@@ -28,10 +28,12 @@ import Landing from './packages/Landing';
 const option = { router }
 
 AppInstace.use(Landing, option);
+AppInstace.use(Dashboard, option);
 
 // Vuetify
 import vuetify from './plugins/vuetify';
 import { pinia } from './plugins/pinia';
+import Dashboard from './packages/Dashboard';
 
 
 AppInstace.use(router).use(vuetify).use(pinia).mount('#app');
