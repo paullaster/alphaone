@@ -8,5 +8,8 @@ export const useDashboardStore = defineStore('dashboard', {
     },
     getters: {
         dashboardGetter: (state) => (key) => state[key]
+    },
+    actions: {
+        
     }
 });
