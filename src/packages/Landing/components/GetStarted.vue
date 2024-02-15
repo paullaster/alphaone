@@ -117,13 +117,15 @@ export default {
     },
     watch: {
         loggedIn: {
-            handler() {
-                this.$router.push({
-                    name:'dashboard',
-                    params: {
-                        user: Auth.User(),
-                    }
-                })
+            handler(val) {
+                if (val === true) {
+                    this.$router.push({
+                        name: 'dashboard',
+                        params: {
+                            user: Auth.User(),
+                        }
+                    });
+                }
             }
         }
     }
