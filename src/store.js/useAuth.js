@@ -37,7 +37,7 @@ export const useAuthStore = defineStore('auth', {
         createAccount(payload) {
             this.setAuthStoreLoader(true);
             _request({
-                url: constants.createApplication,
+                url: constants.createUser,
                 data: payload,
                 method: 'POST',
             })
