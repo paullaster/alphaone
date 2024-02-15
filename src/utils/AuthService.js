@@ -1,16 +1,16 @@
-import WebStorage from "./WebStorage";
+import { Storage } from "./Storage";
 import { APPNAME } from "../environment";
 class AuthService {
     token = null;
 
     constructor() {
-        this.token = WebStorage.GetFromWebStorage('session', `${APPNAME}_token`);
+        this.token = Storage.GetFromStorage('session', `${APPNAME}_token`);
 
     }
     Login(token) {
         this.token = token;
-        WebStorage.RemoveFromStorage('session', `${APPNAME}_token`);
-        WebStorage.storeToWebDB('session', `${APPNAME}_token`, token);
+        Storage.RemoveFromStorage('session', `${APPNAME}_token`);
+        Storage.storeToWebDB('session', `${APPNAME}_token`, token);
 
     }
     isLoggedIn() {
