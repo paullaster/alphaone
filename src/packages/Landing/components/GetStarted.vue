@@ -114,6 +114,18 @@ export default {
             }
         }
     },
+    watch: {
+        loggedIn: {
+            handler() {
+                this.$router.push({
+                    name:'dashboard',
+                    params: {
+                        user: 
+                    }
+                })
+            }
+        }
+    }
 }
 </script>
 
