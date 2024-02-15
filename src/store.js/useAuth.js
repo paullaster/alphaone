@@ -47,7 +47,6 @@ export const useAuthStore = defineStore('auth', {
                 this.setAuthStoreLoader(false);
                 this.toast.success(res?.message);
                 this.login({email: res.data.user.email, password: res.data.user.password});
-                
             })
             .catch((error) => {
                 this.setAuthStoreLoader(false);
