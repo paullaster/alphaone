@@ -1,6 +1,7 @@
 import { Storage } from "./WebStorage";
 import { APPNAME } from "../environment";
 class AuthService {
+    token = null;
     constructor() {
         this.token = Storage.GetFromWebStorage('session', `${APPNAME}_token`);
 
