@@ -70,7 +70,7 @@ export const useAuthStore = defineStore('auth', {
                 this.toast.error(error?.message);
             });
         },
-        logginStatus() {
+        loginStatus() {
             return Auth.isLoggedIn();
         }
     }
