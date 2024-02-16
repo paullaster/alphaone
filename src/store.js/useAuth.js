@@ -5,9 +5,8 @@ import constants from "./constants";
 import { Auth } from "../utils";
 
 export const useAuthStore = defineStore('auth', {
-    state: () =>{
+    state(){
         return {
-            isLoggedIn: null,
         }
     },
     getters: {
@@ -71,10 +70,5 @@ export const useAuthStore = defineStore('auth', {
                 this.toast.error(error?.message);
             });
         },
-        loginStatus() {
-            this.$patch({
-                isLoggedIn: Auth.isLoggedIn()
-            });
-        }
     }
 });

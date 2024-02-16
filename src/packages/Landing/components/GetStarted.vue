@@ -37,11 +37,6 @@ import { Auth } from '@/utils';
 
 export default {
     name: 'GetStarted',
-    beforeEnter: (to, from, next) => {
-        next((v) => {
-            v.authStore.loginStatus();
-        });
-    },
     setup() {
         const authStore = useAuthStore();
 
@@ -70,7 +65,7 @@ export default {
             });
         },
         loggedIn() {
-            return this.authStore.authStoregetter('isLoggedIn');
+            return Auth.isLoggedIn();
         }
     },
     methods: {
