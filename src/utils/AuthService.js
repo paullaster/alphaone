@@ -19,6 +19,7 @@ class AuthService {
         return this.token;
     }
     User() {
+        console.log(atob(this.getToken()))
         return atob(this.getToken());
     }
 }

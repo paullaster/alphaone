@@ -73,7 +73,7 @@ export default {
             const type = this.authOption.type;
             switch (type) {
                 case 'login':
-                    this.authStore.login({email: this.formData.email, password: this.formData.password});
+                    this.authStore.login({ email: this.formData.email, password: this.formData.password });
                     return;
                 case 'signup':
                     this.authStore.confirmEmail({ email: this.formData.email });
@@ -111,18 +111,16 @@ export default {
         }
     },
     watch: {
-        loggedIn: {
-            handler(val) {
-                if (val === true) {
-                    this.$router.push({
-                        name: 'dashboard',
-                        params: {
-                            user: Auth.User()?.id,
-                        }
-                    });
-                }
+        loggedIn(val) {
+            if (val === true) {
+                this.$router.push({
+                    name: 'dashboard',
+                    params: {
+                        user: Auth.User()?.id,
+                    }
+                });
             }
-        }
+        },
     }
 }
 </script>
