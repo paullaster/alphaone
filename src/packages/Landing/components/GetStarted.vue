@@ -65,7 +65,16 @@ export default {
             });
         },
         loggedIn() {
-            return Auth.isLoggedIn();
+            const val = Auth.isLoggedIn();
+            if (val === true) {
+                this.$router.push({
+                    name: 'dashboard',
+                    params: {
+                        user: Auth.User()?.id,
+                    }
+                });
+            }
+            return val;
         }
     },
     methods: {
@@ -112,6 +121,7 @@ export default {
     },
     watch: {
         loggedIn(val) {
+            console.log(val);
             if (val === true) {
                 this.$router.push({
                     name: 'dashboard',
