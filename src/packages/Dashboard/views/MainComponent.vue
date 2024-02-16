@@ -6,9 +6,7 @@ export default {
 </script>
 
 <template>
-    <div>
-        Dashboard
-    </div>
+    <p>Dashboard</p>
 </template>
 
 <style lang="scss" scoped>
