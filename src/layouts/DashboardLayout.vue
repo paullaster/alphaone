@@ -1,7 +1,15 @@
 <template>
-    <div>
-        Dashboardd layout
-    </div>
+    <v-card class="card-custom">
+        <v-layout>
+            <v-app-bar
+            color="teal"
+            >
+            <template v-slot:prepend>
+          <v-app-bar-nav-icon></v-app-bar-nav-icon>
+        </template>
+            </v-app-bar>
+        </v-layout>
+    </v-card>
 </template>
 
 <script>
@@ -9,23 +17,12 @@
 import { Auth } from '@/utils';
     export default {
         name: "DashboardLayout",
-        computed: {
-            loggedIn() {
-            const val = false;
-            if (val === false) {
-                this.$router.push({
-                    name: 'getstarted',
-                    params: {
-                        option: 'login',
-                    }
-                });
-            }
-            return val;
-        }
-        }
     }
 </script>
 
-<style lang="sass" scoped>
-
+<style lang="scss" scoped>
+.card-custom {
+    background-color: red;
+    height: 100dvh;
+}
 </style>
