@@ -9,7 +9,7 @@
           density="compact"
           >
           <template v-slot:prepend>
-            <v-app-bar-nav-icon></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon @click="toggleSidebar"></v-app-bar-nav-icon>
           </template>
   
           <v-app-bar-title>{{ APPNAME }}</v-app-bar-title>
@@ -18,7 +18,7 @@
               <v-btn icon="mdi-dots-vertical"></v-btn>
             </template>
         </v-app-bar>
-        <SidebarDrawer />
+        <SidebarDrawer v-show="viewSidebar"/>
         <v-main>
           <v-container fluid>
             <router-view name="view"></router-view>
@@ -39,6 +39,12 @@ export default {
     data() {
         return {
             APPNAME: APPNAME,
+            viewSidebar: false,
+        }
+    },
+    methods: {
+        toggleSidebar () {
+            this.viewSidebar = !this.viewSidebar;
         }
     }
 }
