@@ -6,17 +6,17 @@
 
 <script>
 
-import { Auth } from "@/utils";
+import { Auth } from '@/utils';
     export default {
         name: "DashboardLayout",
         computed: {
             loggedIn() {
-            const val = Auth.isLoggedIn();
-            if (val === true) {
+            const val = false;
+            if (val === false) {
                 this.$router.push({
-                    name: 'dashboard',
+                    name: 'getstarted',
                     params: {
-                        user: Auth.User()?.id,
+                        option: 'login',
                     }
                 });
             }
