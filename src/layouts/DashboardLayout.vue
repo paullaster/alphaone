@@ -18,7 +18,7 @@
             <v-btn icon="mdi-dots-vertical"></v-btn>
           </template>
         </v-app-bar>
-  
+        <SidebarDrawer />
         <v-main>
           <v-container fluid>
             <p>Dashboard</p>
@@ -30,9 +30,10 @@
 
 <script>
 import { APPNAME } from '../environment';
-import SidebarDrawer from '@/components/SidebarComponent';
+import SidebarDrawer from '../components/SidebarComponent.vue';
 export default {
     name: "DashboardLayout",
+    components: [SidebarDrawer],
 }
 </script>
 
