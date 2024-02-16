@@ -30,6 +30,7 @@
 
 <script>
 import { APPNAME } from '../environment';
+import SidebarDrawer from '@/components/SidebarComponent';
 export default {
     name: "DashboardLayout",
 }
