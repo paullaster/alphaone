@@ -23,7 +23,7 @@ export default {
 <template>
     <v-card>
         <v-row>
-            <v-col>item</v-col>
+            <v-col v-for="course in courses" :key="course.id">{{ course.name }}</v-col>
         </v-row>
     </v-card>
 </template>
