@@ -83,7 +83,19 @@ export default {
                         <div>{{course.description}}.</div>
                     </v-card-text>
                     <v-divider class="mx-4 mb-1"></v-divider>
-                    <v-card-title>Duration: {{ formatDuration(course.duration) }}</v-card-title>
+                    <v-card-title>Price: KES. {{ course.price }}</v-card-title>
+                    <v-card-text>
+                        <v-row align="center" class="mx-0">
+                            <div class="text-grey ms-4">
+                                Duration: {{  }}
+                            </div>
+                        </v-row>
+                        <div class="my-4 text-subtitle-1">
+                            $ • {{ APPNAME }}, School
+                        </div>
+
+                        <div>{{course.description}}.</div>
+                    </v-card-text>
                 </v-card>
             </v-col>
         </v-row>
