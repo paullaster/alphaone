@@ -19,32 +19,32 @@ export const useDashboardStore = defineStore('dashboard', {
             globalStore.setApploading(payload);
         },
         setLinks(link) {
-			const linkExist = this.links.findIndex((l) => {
-				return l.to === link.to;
-			});
-			if (linkExist < 0) {
-				this.$patch({
-					links: [...this.links, link],
-				})
-			}
-		},
-        courses(params = {}){
+            const linkExist = this.links.findIndex((l) => {
+                return l.to === link.to;
+            });
+            if (linkExist < 0) {
+                this.$patch({
+                    links: [...this.links, link],
+                })
+            }
+        },
+        courses(params = {}) {
             this.setDashboardLoader(true);
             _request({
                 url: constants.courses,
                 method: "GET",
                 params
             })
-            then((res) => {
-                this.$patch({
-                    courses: res.data.rows
+                .then((res) => {
+                    this.$patch({
+                        courses: res.data.rows,
+                    });
+                    this.setDashboardLoader(false);
+                })
+                .catch((error) => {
+                    this.setDashboardLoader(false);
+                    this.toast.error(error?.message);
                 });
-                this.setDashboardLoader(false);
-            })
-            .catch((error) => {
-                this.setDashboardLoader(false);
-                this.toast.error(error?.message);
-            });
         }
 
     }
