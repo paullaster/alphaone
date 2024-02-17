@@ -1,9 +1,10 @@
 <script>
+import { useDashboardStore } from '@/store.js';
 export default {
     name: "MainDashboard",
     beforeRouteEnter (to, from, next) {
         next((v) => {
-
+            
         });
     }
 }
