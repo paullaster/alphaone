@@ -78,9 +78,10 @@ export default {
                             $ • {{ APPNAME }}, School
                         </div>
 
-                        <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio
-                            seating.</div>
+                        <div>{{course.description}}.</div>
                     </v-card-text>
+                    <v-divider class="mx-4 mb-1"></v-divider>
+                    <v-card-title>Duration: {{ formatduration(course.duration) }}</v-card-title>
                 </v-card>
             </v-col>
         </v-row>
