@@ -1,4 +1,5 @@
 export const formattingMixin =  {
+   methods: {
     formatDuration(param) {
         const paramArray = param.split('');
         const duration = paramArray.at(-1);
@@ -27,4 +28,5 @@ export const formattingMixin =  {
             default: return this.toast.info("Invalid duration");
         }
     }
+   },
 }

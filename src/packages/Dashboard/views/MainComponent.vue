@@ -1,6 +1,7 @@
 <script>
 import { useDashboardStore } from '@/store.js';
 import {APPNAME} from '@/environment';
+import {formattingMixin} from '@/mixins';
 export default {
     name: "MainDashboard",
     beforeRouteEnter(to, from, next) {
@@ -8,6 +9,7 @@ export default {
             v.dashboardStore.coursesList();
         });
     },
+    mixins: [formattingMixin],
     setup() {
         const dashboardStore = useDashboardStore();
         return { dashboardStore };
@@ -81,7 +83,7 @@ export default {
                         <div>{{course.description}}.</div>
                     </v-card-text>
                     <v-divider class="mx-4 mb-1"></v-divider>
-                    <v-card-title>Duration: {{ formatduration(course.duration) }}</v-card-title>
+                    <v-card-title>Duration: {{ formatDuration(course.duration) }}</v-card-title>
                 </v-card>
             </v-col>
         </v-row>
