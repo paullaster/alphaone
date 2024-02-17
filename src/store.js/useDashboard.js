@@ -11,7 +11,7 @@ export const useDashboardStore = defineStore('dashboard', {
         }
     },
     getters: {
-        dashboardGetter: (state) => (key) => state[key]
+        dashboardGetter: (state) => (key) => state[key],
     },
     actions: {
         setDashboardLoader(payload) {

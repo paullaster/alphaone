@@ -13,6 +13,7 @@ export default {
     },
     computed: {
         courses() {
+            console.log(this.dashboardStore);
             return this.dashboardStore.dashboardGetter('courses');
         }
     }
