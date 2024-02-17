@@ -84,7 +84,7 @@ export default {
                     </v-card-text>
                     <v-divider class="mx-4 mb-1"></v-divider>
                     <v-card-title>Price: KES. {{ course.price }}</v-card-title>
-                    <v-card-text>
+                    <v-card-text class="mt-4">
                         <v-row align="center" class="mx-0">
                             <div class="text-grey ms-4">
                                 Duration: {{ formatDuration(course.duration) }}
