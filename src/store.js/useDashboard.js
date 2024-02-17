@@ -1,4 +1,6 @@
 import { defineStore } from "pinia";
+import { _request } from '@/utils';
+import { useGlobalStore } from "./useGlobal";
 
 export const useDashboardStore = defineStore('dashboard', {
     state() {
@@ -20,5 +22,9 @@ export const useDashboardStore = defineStore('dashboard', {
 				})
 			}
 		},
+        courses(params){
+            
+        }
+
     }
 });
