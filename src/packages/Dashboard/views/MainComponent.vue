@@ -4,7 +4,7 @@ export default {
     name: "MainDashboard",
     beforeRouteEnter (to, from, next) {
         next((v) => {
-            v.dashboardStore.courses();
+            v.dashboardStore.coursesList();
         });
     },
     setup() {
@@ -12,9 +12,11 @@ export default {
         return { dashboardStore };
     },
     computed: {
-        courses() {
-            console.log(this.dashboardStore);
+        coursesList() {
             return this.dashboardStore.dashboardGetter('courses');
+        },
+        cols() {
+            console.log(this.$vuetify.display);
         }
     }
 }
@@ -23,8 +25,8 @@ export default {
 
 <template>
     <v-card>
-        <v-row>
-            <v-col v-for="course in courses" :key="course.id">{{ course.name }}</v-col>
+        <v-row  class="mb-6">
+            <v-col v-for="course in coursesList" :key="course.id" cols="12">{{ course.name }}</v-col>
         </v-row>
     </v-card>
 </template>
