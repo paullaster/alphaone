@@ -90,11 +90,6 @@ export default {
                                 Duration: {{ formatDuration(course.duration) }}
                             </div>
                         </v-row>
-                        <div class="my-4 text-subtitle-1">
-                            $ • {{ APPNAME }}, School
-                        </div>
-
-                        <div>{{course.description}}.</div>
                     </v-card-text>
                 </v-card>
             </v-col>
