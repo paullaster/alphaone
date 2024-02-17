@@ -87,7 +87,7 @@ export default {
                     <v-card-text>
                         <v-row align="center" class="mx-0">
                             <div class="text-grey ms-4">
-                                Duration: {{  }}
+                                Duration: {{ formatDuration(course.duration) }}
                             </div>
                         </v-row>
                         <div class="my-4 text-subtitle-1">
