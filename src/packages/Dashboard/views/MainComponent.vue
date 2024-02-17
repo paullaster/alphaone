@@ -33,7 +33,7 @@ export default {
 
         },
         loading() {
-            return !!this.coursesList;
+            return !this.coursesList;
         }
     }
 }
@@ -41,17 +41,31 @@ export default {
 </script>
 
 <template>
-    <v-card>
-        <v-row class="mb-6">
-            <v-col v-for="course in coursesList" :key="course.id" :cols="cols[0]">
-                <v-card :loading="loading" class="mx-auto my-12" max-width="374">
-                    <template v-slot:loader="{ isActive }">
-                        <v-progress-linear :active="isActive" color="deep-purple" height="4"
-                            indeterminate></v-progress-linear>
-                    </template>
+        <v-card>
+            <v-row class="mb-6">
+                <v-col v-for="course in coursesList" :key="course.id" :cols="cols[0]">
+                    <v-card :loading="loading" class="mx-auto my-12" max-width="374">
+                        <template v-slot:loader="{ isActive }">
+                            <v-progress-linear :active="isActive" color="deep-purple" height="4"
+                                indeterminate></v-progress-linear>
+                        </template>
+                        <v-img cover height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png"></v-img>
+                        <v-card-item>
+                            <v-card-title>{{ course.name }}</v-card-title>
+
+                            <v-card-subtitle>
+                                <span class="me-1">Local Favorite</span>
+
+                                <v-icon color="error" icon="mdi-fire-circle" size="small"></v-icon>
+                            </v-card-subtitle>
+                        </v-card-item>
                 </v-card>
             </v-col>
         </v-row>
+    </v-card>
+</template>
+
+<style lang="scss" scoped></style>
     </v-card>
 </template>
 
