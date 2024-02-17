@@ -12,6 +12,10 @@ export const useDashboardStore = defineStore('dashboard', {
         dashboardGetter: (state) => (key) => state[key]
     },
     actions: {
+        setDashboardLoader(payload) {
+            const globalStore = useGlobalStore();
+            globalStore.setApploading(payload);
+        },
         setLinks(link) {
 			const linkExist = this.links.findIndex((l) => {
 				return l.to === link.to;
