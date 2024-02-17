@@ -1,6 +1,11 @@
 <script>
 export default {
     name: "MainDashboard",
+    beforeRouteEnter (to, from, next) {
+        next((v) => {
+
+        });
+    }
 }
 
 </script>

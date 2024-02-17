@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { _request } from '@/utils';
+import { _request } from "@/http";
 import { useGlobalStore } from "./useGlobal";
 import constants from "./constants";
 
