@@ -4,8 +4,17 @@ export default {
     name: "MainDashboard",
     beforeRouteEnter (to, from, next) {
         next((v) => {
-            
+            v.dashboardStore.courses();
         });
+    },
+    setup() {
+        const dashboardStore = useDashboardStore();
+        return { dashboardStore };
+    },
+    computed: {
+        courses() {
+            return this.dashboardStore.dashboardGetter('courses');
+        }
     }
 }
 

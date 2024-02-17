@@ -28,7 +28,7 @@ export const useDashboardStore = defineStore('dashboard', {
 				})
 			}
 		},
-        courses(params){
+        courses(params = {}){
             this.setDashboardLoader(true);
             _request({
                 url: constants.courses,
