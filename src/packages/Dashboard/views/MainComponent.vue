@@ -1,7 +1,7 @@
 <script>
 import { useDashboardStore } from '@/store.js';
-import {APPNAME} from '@/environment';
-import {formattingMixin} from '@/mixins';
+import { APPNAME } from '@/environment';
+import { formattingMixin } from '@/mixins';
 export default {
     name: "MainDashboard",
     beforeRouteEnter(to, from, next) {
@@ -14,7 +14,7 @@ export default {
         const dashboardStore = useDashboardStore();
         return { dashboardStore };
     },
-    data(){
+    data() {
         return {
             APPNAME,
         }
@@ -80,7 +80,7 @@ export default {
                             $ • {{ APPNAME }}, School
                         </div>
 
-                        <div>{{course.description}}.</div>
+                        <div>{{ course.description }}.</div>
                     </v-card-text>
                     <v-divider class="mx-4 mb-1"></v-divider>
                     <v-card-title>Price: KES. {{ course.price }}</v-card-title>
@@ -91,6 +91,11 @@ export default {
                             </div>
                         </v-row>
                     </v-card-text>
+                    <v-card-actions>
+                        <v-btn color="deep-purple-lighten-2" variant="flat" @click="apply(course.id)">
+                            Apply
+                        </v-btn>
+                    </v-card-actions>
                 </v-card>
             </v-col>
         </v-row>
