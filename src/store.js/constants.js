@@ -5,4 +5,7 @@ export default {
 
     // COURSES
     courses: 'courses',
+
+    // IMAGES
+    images: 'images',
 }
