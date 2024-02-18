@@ -45,6 +45,12 @@ export const useDashboardStore = defineStore('dashboard', {
                     this.setDashboardLoader(false);
                     this.toast.error(error?.message);
                 });
+        },
+        getCourse(params) {
+            this.setDashboardLoader(true);
+            _request({
+                url:
+            })
         }
 
     }

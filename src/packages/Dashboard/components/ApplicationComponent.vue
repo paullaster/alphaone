@@ -10,7 +10,7 @@
         name: 'ApplicationComponent',
         beforeRouteEnter (to, from, next) {
             next((v) => {
-
+                v.dashboardStore.
             });
         },
         setup() {
