@@ -21,7 +21,7 @@
                             label="Select gender"></v-select>
                     </v-col>
                     <v-col cols="6">
-                        <v-btn block >submit</v-btn>
+                        <v-btn block color="primary" >submit</v-btn>
                     </v-col>
                 </v-row>
             </v-form>
