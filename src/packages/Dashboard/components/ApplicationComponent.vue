@@ -10,7 +10,8 @@
         name: 'ApplicationComponent',
         beforeRouteEnter (to, from, next) {
             next((v) => {
-                v.dashboardStore.
+                v.dashboardStore.getCourse({id: v.route.params.course});
+                v.setupStore.
             });
         },
         setup() {
