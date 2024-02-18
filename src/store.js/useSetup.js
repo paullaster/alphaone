@@ -9,7 +9,7 @@ export const useSetupStore = defineStore('setup', {
         }
     },
     getters: {
-        setGetters: (state) => (key) => state[key],
+        setupGetters: (state) => (key) => state[key],
     },
     actions: {
         getImages(params) {

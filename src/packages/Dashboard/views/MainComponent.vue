@@ -44,7 +44,10 @@ export default {
         },
         loading() {
             return !this.coursesList;
-        }
+        },
+        images() {
+            return this.setupStore.setupGetters('images');
+        },
     }
 }
 
