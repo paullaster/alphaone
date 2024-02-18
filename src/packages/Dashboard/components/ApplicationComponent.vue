@@ -4,24 +4,21 @@
             <v-form>
                 <v-row>
                     <v-col cols="6">
-                        <v-text-field v-model="formData.name" 
-                            label="Full name"></v-text-field>
+                        <v-text-field v-model="formData.name" label="Full name"></v-text-field>
                     </v-col>
                     <v-col cols="6">
-                        <v-text-field v-model="formData.email" 
-                            label="Email"></v-text-field>
+                        <v-text-field v-model="formData.email" label="Email"></v-text-field>
                     </v-col>
                     <v-col cols="6">
-                        <v-text-field v-model="formData.identificationNumber" 
+                        <v-text-field v-model="formData.identificationNumber"
                             label="Identification document number"></v-text-field>
                     </v-col>
                     <v-col cols="6">
-                        <v-text-field v-model="formData.age" 
-                            label="Age"></v-text-field>
+                        <v-text-field v-model="formData.age" label="Age"></v-text-field>
                     </v-col>
-                    <v-col>
-                        <v-text-field v-model="formData.gender" 
-                            label="Gender"></v-text-field>
+                    <v-col cols="6">
+                        <v-select v-model="formData.gender" :items="items" :error-messages="select.errorMessage.value"
+                            label="Select"></v-select>
                     </v-col>
                     <!-- <v-col>
                         <v-text-field v-model="name.value.value" :counter="10" :error-messages="name.errorMessage.value"
@@ -63,13 +60,14 @@ export default {
             setupStore,
         }
     },
-    data(){
+    data() {
         return {
             formData: {
                 name: '',
                 email: '',
                 identificationNumber: '',
                 age: '',
+                gender: ''
             }
         }
     },
@@ -79,6 +77,9 @@ export default {
         },
         image() {
             return this.setupStore.setupGetters('image');
+        },
+        items() {
+            return ['Male', 'Female', 'Prefer not to say'];
         },
     }
 }
