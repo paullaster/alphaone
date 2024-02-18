@@ -6,6 +6,7 @@ export const useSetupStore = defineStore('setup', {
     state: () => {
         return {
             images: [],
+            image: {},
         }
     },
     getters: {
@@ -28,7 +29,19 @@ export const useSetupStore = defineStore('setup', {
             });
         },
         getImage(params){
-            
+            _request({
+                url: constants.image,
+                method: 'GET',
+                params,
+            })
+            .then((res) => {
+                this.$patch({
+                    image: res.data,
+                });
+            })
+            .catch((error) => {
+                this.toast.error(error?.message);
+            });
         }
     }
 });
