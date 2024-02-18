@@ -13,7 +13,11 @@ export const useSetupStore = defineStore('setup', {
     },
     actions: {
         getImages(params) {
-            
+            _request({
+                url: constants.images,
+                method: 'GET',
+                params
+            })
         }
     }
 });
