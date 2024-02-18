@@ -9,4 +9,5 @@ export default {
 
     // IMAGES
     images: 'images',
+    image: 'images/image',
 }

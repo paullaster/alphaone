@@ -27,5 +27,8 @@ export const useSetupStore = defineStore('setup', {
                 this.toast.error(error?.message);
             });
         },
+        getImage(params){
+            
+        }
     }
 });
