@@ -10,8 +10,8 @@
         name: 'ApplicationComponent',
         beforeRouteEnter (to, from, next) {
             next((v) => {
-                v.dashboardStore.getCourse({id: v.route.params.course});
-                v.setupStore.fetchSingleImage({sourceID: btoa(v.route.params.course), })
+                v.dashboardStore.getCourse({id: v.$route.params.course});
+                v.setupStore.fetchSingleImage({sourceID: btoa(v.$route.params.course), documentType: 'Course'});
             });
         },
         setup() {
@@ -20,6 +20,14 @@
             return {
                 dashboardStore,
                 setupStore,
+            }
+        },
+        computed: {
+            course() {
+                return this.dashboardStore.dashboardGetter('course');
+            },
+            image() {
+                return this.setupStore.setupGetters('images');
             }
         }
     }
