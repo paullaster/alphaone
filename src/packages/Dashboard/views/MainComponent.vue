@@ -1,5 +1,5 @@
 <script>
-import { useDashboardStore } from '@/store.js';
+import { useDashboardStore, useSetup } from '@/store.js';
 import { APPNAME } from '@/environment';
 import { formattingMixin } from '@/mixins';
 export default {
@@ -7,13 +7,14 @@ export default {
     beforeRouteEnter(to, from, next) {
         next((v) => {
             v.dashboardStore.coursesList();
-            v.
+            v.setupStore.getImages({documentType: 'Course'});
         });
     },
     mixins: [formattingMixin],
     setup() {
         const dashboardStore = useDashboardStore();
-        return { dashboardStore };
+        const setupStore = useSetup();
+        return { dashboardStore, setupStore };
     },
     data() {
         return {
