@@ -28,7 +28,7 @@ export const useSetupStore = defineStore('setup', {
                 this.toast.error(error?.message);
             });
         },
-        getImage(params){
+        fetchSingleImage(params){
             _request({
                 url: constants.image,
                 method: 'GET',

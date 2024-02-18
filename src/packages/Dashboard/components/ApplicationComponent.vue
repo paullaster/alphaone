@@ -11,7 +11,7 @@
         beforeRouteEnter (to, from, next) {
             next((v) => {
                 v.dashboardStore.getCourse({id: v.route.params.course});
-                v.setupStore.
+                v.setupStore.fetchSingleImage({sourceID: btoa(v.route.params.course), })
             });
         },
         setup() {
