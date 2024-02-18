@@ -1,5 +1,5 @@
 <script>
-import { useDashboardStore, useSetup } from '@/store.js';
+import { useDashboardStore, useSetupStore } from '@/store.js';
 import { APPNAME } from '@/environment';
 import { formattingMixin } from '@/mixins';
 export default {
@@ -13,7 +13,7 @@ export default {
     mixins: [formattingMixin],
     setup() {
         const dashboardStore = useDashboardStore();
-        const setupStore = useSetup();
+        const setupStore = useSetupStore();
         return { dashboardStore, setupStore };
     },
     data() {
@@ -71,7 +71,7 @@ export default {
                         <v-progress-linear :active="isActive" color="deep-purple" height="4"
                             indeterminate></v-progress-linear>
                     </template>
-                    <v-img cover height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png"></v-img>
+                    <v-img cover height="250" :src="getImage(course.id)"></v-img>
                     <v-card-item>
                         <v-card-title>{{ course.name }}</v-card-title>
 
