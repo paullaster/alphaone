@@ -42,6 +42,21 @@ export const useSetupStore = defineStore('setup', {
             .catch((error) => {
                 this.toast.error(error?.message);
             });
+        },
+        getCountries(params){
+            _request({
+                url: constants.countries,
+                method: 'GET',
+                params,
+            })
+            .then((res) => {
+                this.$patch({
+                    countries: res.data,
+                });
+            })
+            .catch((error) => {
+                this.toast.error(error?.message);
+            });
         }
     }
 });
