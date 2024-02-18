@@ -58,7 +58,7 @@ export default {
             return url;
         },
         apply(course) {
-            this.router.push({
+            this.$router.push({
                 name: 'apply',
                 params: {
                     course: course,

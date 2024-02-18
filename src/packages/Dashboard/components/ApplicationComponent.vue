@@ -1,12 +1,21 @@
 <template>
     <div>
-
+        application
     </div>
 </template>
 
 <script>
+    import { useDashboardStore, useSetupStore } from '@/store.js';
     export default {
-        name: 'ApplicationComponent'
+        name: 'ApplicationComponent',
+        setup() {
+            const dashboardStore = useDashboardStore();
+            const setupStore = useSetupStore();
+            return {
+                dashboardStore,
+                setupStore,
+            }
+        }
     }
 </script>
 
