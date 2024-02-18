@@ -17,8 +17,8 @@
                         <v-text-field v-model="formData.age" label="Age"></v-text-field>
                     </v-col>
                     <v-col cols="6">
-                        <v-select v-model="formData.gender" :items="items" :error-messages="select.errorMessage.value"
-                            label="Select"></v-select>
+                        <v-select v-model="formData.gender" :items="items" 
+                            label="SelectSelect gender"></v-select>
                     </v-col>
                     <!-- <v-col>
                         <v-text-field v-model="name.value.value" :counter="10" :error-messages="name.errorMessage.value"
