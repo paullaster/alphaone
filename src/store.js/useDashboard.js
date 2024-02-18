@@ -8,6 +8,7 @@ export const useDashboardStore = defineStore('dashboard', {
         return {
             links: [],
             courses: [],
+            course: {},
         }
     },
     getters: {
@@ -49,8 +50,18 @@ export const useDashboardStore = defineStore('dashboard', {
         getCourse(params) {
             this.setDashboardLoader(true);
             _request({
-                url:
+                url: constants.course,
+                method: 'GET',
+                params,
             })
+            .then((res) => {
+                this.$patch({
+                    course: res.data,
+                });
+            })
+            .catch((error) => {
+                this.toast.error(error?.message);
+            });
         }
 
     }

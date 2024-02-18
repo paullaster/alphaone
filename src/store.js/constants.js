@@ -5,6 +5,7 @@ export default {
 
     // COURSES
     courses: 'courses',
+    course: 'courses/single',
 
     // IMAGES
     images: 'images',
