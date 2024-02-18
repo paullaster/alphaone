@@ -10,4 +10,7 @@ export default {
     // IMAGES
     images: 'images',
     image: 'images/image',
+
+    // SETUPS
+    countries: 'setup/countries',
 }
