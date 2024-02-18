@@ -48,6 +48,15 @@ export default {
         images() {
             return this.setupStore.setupGetters('images');
         },
+    },
+    methods: {
+        getImage(courseId) {
+            const url = this.images?.find((img) => {
+                return atob(img.sourceID) === courseId
+            })?.url;
+            console.log(url);
+            return url;
+        }
     }
 }
 
