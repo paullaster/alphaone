@@ -25,7 +25,7 @@ export const useSetupStore = defineStore('setup', {
             })
             .catch((error) => {
                 this.toast.error(error?.message);
-            })
-        }
+            });
+        },
     }
 });
