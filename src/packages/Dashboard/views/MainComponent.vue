@@ -7,6 +7,7 @@ export default {
     beforeRouteEnter(to, from, next) {
         next((v) => {
             v.dashboardStore.coursesList();
+            v.
         });
     },
     mixins: [formattingMixin],
