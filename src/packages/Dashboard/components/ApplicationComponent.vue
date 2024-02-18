@@ -27,7 +27,7 @@
                 return this.dashboardStore.dashboardGetter('course');
             },
             image() {
-                return this.setupStore.setupGetters('images');
+                return this.setupStore.setupGetters('image');
             }
         }
     }
