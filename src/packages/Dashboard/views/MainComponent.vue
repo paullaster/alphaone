@@ -56,6 +56,14 @@ export default {
             })?.url;
             console.log(url);
             return url;
+        },
+        apply(course) {
+            this.router.push({
+                name: 'apply',
+                params: {
+                    course: course,
+                }
+            })
         }
     }
 }
