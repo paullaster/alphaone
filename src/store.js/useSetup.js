@@ -18,6 +18,14 @@ export const useSetupStore = defineStore('setup', {
                 method: 'GET',
                 params
             })
+            .then((res) => {
+                this.$patch({
+                    images: res.data.rows,
+                });
+            })
+            .catch((error) => {
+                this.toast.error(error?.message);
+            })
         }
     }
 });
