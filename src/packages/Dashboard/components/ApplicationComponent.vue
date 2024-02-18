@@ -18,24 +18,11 @@
                     </v-col>
                     <v-col cols="6">
                         <v-select v-model="formData.gender" :items="items" 
-                            label="SelectSelect gender"></v-select>
+                            label="Select gender"></v-select>
                     </v-col>
-                    <!-- <v-col>
-                        <v-text-field v-model="name.value.value" :counter="10" :error-messages="name.errorMessage.value"
-                            label="Name"></v-text-field>
+                    <v-col cols="6">
+                        <v-btn block >submit</v-btn>
                     </v-col>
-                    <v-col>
-                        <v-text-field v-model="name.value.value" :counter="10" :error-messages="name.errorMessage.value"
-                            label="Name"></v-text-field>
-                    </v-col>
-                    <v-col>
-                        <v-text-field v-model="name.value.value" :counter="10" :error-messages="name.errorMessage.value"
-                            label="Name"></v-text-field>
-                    </v-col>
-                    <v-col>
-                        <v-text-field v-model="name.value.value" :counter="10" :error-messages="name.errorMessage.value"
-                            label="Name"></v-text-field>
-                    </v-col> -->
                 </v-row>
             </v-form>
         </v-card>

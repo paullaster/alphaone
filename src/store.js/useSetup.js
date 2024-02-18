@@ -7,6 +7,7 @@ export const useSetupStore = defineStore('setup', {
         return {
             images: [],
             image: {},
+            countries: [],
         }
     },
     getters: {
@@ -57,6 +58,6 @@ export const useSetupStore = defineStore('setup', {
             .catch((error) => {
                 this.toast.error(error?.message);
             });
-        }
+        },
     }
 });
