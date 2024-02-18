@@ -14,7 +14,7 @@ export default {
             }
         },
         {
-            path: 'apply',
+            path: 'apply/:course',
             name: 'apply',
             components: {
                 view: ApplicationComponent,
