@@ -97,7 +97,6 @@ export const useDashboardStore = defineStore('dashboard', {
             .catch((error) => {
                 this.toast.error(error?.message);
             });
-        }
-
+        },
     }
 });
