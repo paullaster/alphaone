@@ -30,6 +30,11 @@
                                     Location <v-chip>Eldoret, Kesses</v-chip>
                                 </v-card-text>
                             </v-col>
+                            <v-col cols="12">
+                                <v-card-text>
+                                    Description <v-chip>{{ course.description }}</v-chip>
+                                </v-card-text>
+                            </v-col>
                         </v-row>
                     </v-col>
                     <!-- <v-divider class="ms-3" inset vertical></v-divider> -->
