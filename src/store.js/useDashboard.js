@@ -55,14 +55,14 @@ export const useDashboardStore = defineStore('dashboard', {
                 method: 'GET',
                 params,
             })
-            .then((res) => {
-                this.$patch({
-                    course: res.data,
+                .then((res) => {
+                    this.$patch({
+                        course: res.data,
+                    });
+                })
+                .catch((error) => {
+                    this.toast.error(error?.message);
                 });
-            })
-            .catch((error) => {
-                this.toast.error(error?.message);
-            });
         },
         createApplicationRequest(payload) {
             this.setDashboardLoader(true);
@@ -71,14 +71,14 @@ export const useDashboardStore = defineStore('dashboard', {
                 method: 'POST',
                 data: payload,
             })
-            .then((res) => {
-                this.setDashboardLoader(false);
-                this.toast.success(res?.message);
-                this.getApplicationRequest();
-            })
-            .catch((error) => {
-                this.toast.error(error?.message);
-            });
+                .then((res) => {
+                    this.setDashboardLoader(false);
+                    this.toast.success(res?.message);
+                    this.getApplicationRequest();
+                })
+                .catch((error) => {
+                    this.toast.error(error?.message);
+                });
         },
         getApplicationRequest(params = {}) {
             this.setDashboardLoader(true);
@@ -87,16 +87,16 @@ export const useDashboardStore = defineStore('dashboard', {
                 method: 'GET',
                 params,
             })
-            .then((res) => {
-                this.setDashboardLoader(false);
-                this.toast.success(res?.message);
-                this.$patch({
-                    applications: res.data.rows,
+                .then((res) => {
+                    this.setDashboardLoader(false);
+                    this.toast.success(res?.message);
+                    this.$patch({
+                        applications: res.data.rows,
+                    });
+                })
+                .catch((error) => {
+                    this.toast.error(error?.message);
                 });
-            })
-            .catch((error) => {
-                this.toast.error(error?.message);
-            });
         },
     }
 });
