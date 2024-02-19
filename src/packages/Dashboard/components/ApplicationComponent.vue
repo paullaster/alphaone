@@ -118,7 +118,7 @@ export default {
                 ...this.formData
             }
             const { name, email, ...data} = rawData;
-            
+            this.dashboardStore.createApplicationRequest(data);
         }
     }
 }
