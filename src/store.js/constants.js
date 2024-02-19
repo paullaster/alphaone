@@ -13,4 +13,7 @@ export default {
 
     // SETUPS
     countries: 'setup/countries',
+
+    // APPLICATION REQUESTS
+    
 }

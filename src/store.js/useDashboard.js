@@ -69,7 +69,7 @@ export const useDashboardStore = defineStore('dashboard', {
         createApplicationRequest(payload) {
             this.setDashboardLoader(true);
             _request({
-                url: '',
+                url: constants,
                 method: 'POST',
                 data: payload,
             })
@@ -86,7 +86,7 @@ export const useDashboardStore = defineStore('dashboard', {
         getApplicationRequest(params = {}) {
             this.setDashboardLoader(true);
             _request({
-                url: '',
+                url: constants.,
                 method: 'GET',
                 params,
             })
