@@ -9,6 +9,7 @@ export const useDashboardStore = defineStore('dashboard', {
             links: [],
             courses: [],
             course: {},
+            applications: [],
         }
     },
     getters: {
@@ -57,6 +58,40 @@ export const useDashboardStore = defineStore('dashboard', {
             .then((res) => {
                 this.$patch({
                     course: res.data,
+                });
+            })
+            .catch((error) => {
+                this.toast.error(error?.message);
+            });
+        },
+        createApplicationRequest(payload) {
+            this.setDashboardLoader(true);
+            _request({
+                url: '',
+                method: 'POST',
+                data: payload,
+            })
+            .then((res) => {
+                this.setDashboardLoader(false);
+                this.toast.success(res?.message);
+                this.getApplicationRequest();
+            })
+            .catch((error) => {
+                this.toast.error(error?.message);
+            });
+        },
+        getApplicationRequest(params = {}) {
+            this.setDashboardLoader(true);
+            _request({
+                url: '',
+                method: 'GET',
+                params,
+            })
+            .then((res) => {
+                this.setDashboardLoader(false);
+                this.toast.success(res?.message);
+                this.$patch({
+                    applications: res.data.rows,
                 });
             })
             .catch((error) => {

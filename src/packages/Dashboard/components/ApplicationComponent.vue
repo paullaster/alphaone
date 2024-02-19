@@ -37,7 +37,6 @@
                             </v-col>
                         </v-row>
                     </v-col>
-                    <!-- <v-divider class="ms-3" inset vertical></v-divider> -->
                     <v-col cols="6">
                         <v-row>
                             <v-col cols="6">
@@ -57,7 +56,7 @@
                                 <v-select v-model="formData.gender" :items="items" label="Select gender"></v-select>
                             </v-col>
                             <v-col cols="6">
-                                <v-btn block color="primary" class="py-6">submit</v-btn>
+                                <v-btn block color="primary" class="py-6" @click="createApplicationRequest">submit</v-btn>
                             </v-col>
                         </v-row>
                     </v-col>
@@ -108,6 +107,19 @@ export default {
         items() {
             return ['Male', 'Female', 'Prefer not to say'];
         },
+    },
+    methods: {
+        createApplicationRequest() {
+            const rawData = {
+                course: this.course.id,
+                payment: 'Pending',
+                status: 'New',
+                applicant: '',
+                ...this.formData
+            }
+            const { name, email, ...data} = rawData;
+            
+        }
     }
 }
 </script>
