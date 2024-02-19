@@ -4,24 +4,57 @@
             <v-form>
                 <v-row>
                     <v-col cols="6">
-                        <v-text-field v-model="formData.name" label="Full name"></v-text-field>
+                        <v-row>
+                            <v-col cols="12">
+                                <v-card-title>
+                                    Couse details
+                                </v-card-title>
+                            </v-col>
+                            <v-col cols="6">
+                                <v-card-text>
+                                    Name <v-chip>{{course.name}}</v-chip>
+                                </v-card-text>
+                            </v-col>
+                            <v-col cols="6">
+                                <v-card-text>
+                                    Duration <v-chip>{{formatDuration(course.duration)}}</v-chip>
+                                </v-card-text>
+                            </v-col>
+                            <v-col cols="6">
+                                <v-card-text>
+                                    Cost<v-chip> KES. {{course.price}}</v-chip>
+                                </v-card-text>
+                            </v-col>
+                            <v-col cols="6">
+                                <v-card-text>
+                                    Location <v-chip>Eldoret, Kesses</v-chip>
+                                </v-card-text>
+                            </v-col>
+                        </v-row>
                     </v-col>
+                    <!-- <v-divider class="ms-3" inset vertical></v-divider> -->
                     <v-col cols="6">
-                        <v-text-field v-model="formData.email" label="Email"></v-text-field>
-                    </v-col>
-                    <v-col cols="6">
-                        <v-text-field v-model="formData.identificationNumber"
-                            label="Identification document number"></v-text-field>
-                    </v-col>
-                    <v-col cols="6">
-                        <v-text-field v-model="formData.age" label="Age"></v-text-field>
-                    </v-col>
-                    <v-col cols="6">
-                        <v-select v-model="formData.gender" :items="items" 
-                            label="Select gender"></v-select>
-                    </v-col>
-                    <v-col cols="6">
-                        <v-btn block color="primary" class="py-6" >submit</v-btn>
+                        <v-row>
+                            <v-col cols="6">
+                                <v-text-field v-model="formData.name" label="Full name"></v-text-field>
+                            </v-col>
+                            <v-col cols="6">
+                                <v-text-field v-model="formData.email" label="Email"></v-text-field>
+                            </v-col>
+                            <v-col cols="6">
+                                <v-text-field v-model="formData.identificationNumber"
+                                    label="Identification document number"></v-text-field>
+                            </v-col>
+                            <v-col cols="6">
+                                <v-text-field v-model="formData.age" label="Age"></v-text-field>
+                            </v-col>
+                            <v-col cols="6">
+                                <v-select v-model="formData.gender" :items="items" label="Select gender"></v-select>
+                            </v-col>
+                            <v-col cols="6">
+                                <v-btn block color="primary" class="py-6">submit</v-btn>
+                            </v-col>
+                        </v-row>
                     </v-col>
                 </v-row>
             </v-form>
@@ -31,8 +64,10 @@
 
 <script>
 import { useDashboardStore, useSetupStore } from '@/store.js';
+import { formattingMixin } from '@/mixins';
 export default {
     name: 'ApplicationComponent',
+    mixins: [formattingMixin],
     beforeRouteEnter(to, from, next) {
         next((v) => {
             v.dashboardStore.getCourse({ id: v.$route.params.course });
