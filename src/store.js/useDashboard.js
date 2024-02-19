@@ -56,11 +56,13 @@ export const useDashboardStore = defineStore('dashboard', {
                 params,
             })
                 .then((res) => {
+                    this.setDashboardLoader(false);
                     this.$patch({
                         course: res.data,
                     });
                 })
                 .catch((error) => {
+                    this.setDashboardLoader(false);
                     this.toast.error(error?.message);
                 });
         },
@@ -77,6 +79,7 @@ export const useDashboardStore = defineStore('dashboard', {
                     this.getApplicationRequest();
                 })
                 .catch((error) => {
+                    this.setDashboardLoader(false);
                     this.toast.error(error?.message);
                 });
         },
@@ -95,6 +98,7 @@ export const useDashboardStore = defineStore('dashboard', {
                     });
                 })
                 .catch((error) => {
+                    this.setDashboardLoader(false);
                     this.toast.error(error?.message);
                 });
         },
