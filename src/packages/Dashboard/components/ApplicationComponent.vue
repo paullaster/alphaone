@@ -12,17 +12,17 @@
                             </v-col>
                             <v-col cols="6">
                                 <v-card-text>
-                                    Name <v-chip>{{course.name}}</v-chip>
+                                    Name <v-chip>{{ course.name }}</v-chip>
                                 </v-card-text>
                             </v-col>
                             <v-col cols="6">
                                 <v-card-text>
-                                    Duration <v-chip>{{formatDuration(course.duration)}}</v-chip>
+                                    Duration <v-chip>{{ formatDuration(course.duration) }}</v-chip>
                                 </v-card-text>
                             </v-col>
                             <v-col cols="6">
                                 <v-card-text>
-                                    Cost<v-chip> KES. {{course.price}}</v-chip>
+                                    Cost<v-chip> KES. {{ course.price }}</v-chip>
                                 </v-card-text>
                             </v-col>
                             <v-col cols="6">
@@ -121,17 +121,20 @@ export default {
                 applicant: '',
                 ...this.formData
             }
-            const { name, email, ...data} = rawData;
+            const { name, email, ...data } = rawData;
             this.dashboardStore.createApplicationRequest(data);
         }
     },
-    watch:{
-        user(newValue) {
-            console.log(newValue);
-           if(newValue) {
-            this.formData.name = newValue.name;
-            this.formData.email = newValue.email;
-           }
+    watch: {
+        user: {
+            handler: (newValue) => {
+                console.log(newValue);
+                if (newValue) {
+                    this.formData.name = newValue.name;
+                    this.formData.email = newValue.email;
+                }
+            },
+            immediate: true,
         }
     }
 }
