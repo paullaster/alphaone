@@ -20,5 +20,6 @@ export default {
                 view: ApplicationComponent,
             }
         }
-    ]
+    ],
+    meta: {requiresAuth: true},
 }
