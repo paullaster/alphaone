@@ -69,6 +69,7 @@
 <script>
 import { useDashboardStore, useSetupStore } from '@/store.js';
 import { formattingMixin } from '@/mixins';
+import { Auth } from '../../../utils';
 export default {
     name: 'ApplicationComponent',
     mixins: [formattingMixin],
@@ -107,6 +108,9 @@ export default {
         items() {
             return ['Male', 'Female', 'Prefer not to say'];
         },
+        user() {
+            return Auth.User();
+        }
     },
     methods: {
         createApplicationRequest() {
