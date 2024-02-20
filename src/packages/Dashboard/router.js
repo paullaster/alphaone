@@ -3,12 +3,13 @@ import MainComponent from './views/MainComponent.vue';
 import ApplicationComponent from './components/ApplicationComponent.vue';
 
 export default {
-    path: '/dashboard/:user',
-    name: 'dashboard',
+    path: '/dashboard/',
     component: DashboardLayout,
+    redirect: {name: 'dashboard'},
     children: [
         {
-            path: '',
+            path: ':user',
+            name: 'dashboard',
             components: {
                 view: MainComponent,
             }
