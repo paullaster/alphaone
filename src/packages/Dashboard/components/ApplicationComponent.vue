@@ -124,6 +124,14 @@ export default {
             const { name, email, ...data} = rawData;
             this.dashboardStore.createApplicationRequest(data);
         }
+    },
+    watch:{
+        user(newValue) {
+           if(newValue) {
+            this.formData.name = newValue.name;
+            this.formData.email = newValue.email;
+           }
+        }
     }
 }
 </script>
