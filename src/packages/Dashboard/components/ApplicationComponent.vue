@@ -127,6 +127,7 @@ export default {
     },
     watch:{
         user(newValue) {
+            console.log(newValue);
            if(newValue) {
             this.formData.name = newValue.name;
             this.formData.email = newValue.email;
