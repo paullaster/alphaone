@@ -7,6 +7,7 @@ import { Auth } from "../utils";
 export const useAuthStore = defineStore('auth', {
     state(){
         return {
+            isLoggedIn: false,
         }
     },
     getters: {
