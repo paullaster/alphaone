@@ -10,7 +10,7 @@ class AuthService {
         this.token = token;
         Storage.RemoveFromStorage('session', `${APPNAME}_token`);
         Storage.storeToWebDB('session', `${APPNAME}_token`, token);
-
+        location.reload();
     }
     isLoggedIn() {
         return !!this.token;
