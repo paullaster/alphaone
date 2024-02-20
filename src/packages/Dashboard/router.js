@@ -21,5 +21,5 @@ export default {
             }
         }
     ],
-    meta: {requiresAuth: true},
+    meta: { requiresAuth: true },
 }
