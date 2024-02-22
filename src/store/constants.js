@@ -15,6 +15,6 @@ export default {
     countries: 'setup/countries',
 
     // APPLICATION REQUESTS
-    createApplication: '',
-    getApplication: '',
+    createApplication: 'applications/apply',
+    getApplication: 'applications',
 }

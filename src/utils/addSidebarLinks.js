@@ -1,4 +1,4 @@
-import { useDashboardStore } from "@/store.js";
+import { useDashboardStore } from "@/store";
 
 export const addLink = (link) => {
     const dashboardStore = useDashboardStore();

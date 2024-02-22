@@ -32,7 +32,7 @@
 
 <script>
 import AuthOptions from '../AuthOptions';
-import { useAuthStore } from '@/store.js';
+import { useAuthStore } from '@/store';
 import { Auth } from '@/utils';
 
 export default {

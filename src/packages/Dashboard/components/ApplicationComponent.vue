@@ -46,7 +46,7 @@
                                 <v-text-field v-model="formData.email" label="Email"></v-text-field>
                             </v-col>
                             <v-col cols="6">
-                                <v-text-field v-model="formData.identificationNumber"
+                                <v-text-field v-model="formData.identificationDocument"
                                     label="Identification document number"></v-text-field>
                             </v-col>
                             <v-col cols="6">
@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import { useDashboardStore, useSetupStore } from '@/store.js';
+import { useDashboardStore, useSetupStore } from '@/store';
 import { formattingMixin } from '@/mixins';
 import { Auth } from '../../../utils';
 export default {
@@ -92,11 +92,17 @@ export default {
             formData: {
                 name: '',
                 email: '',
-                identificationNumber: '',
+                identificationDocument: '',
                 age: '',
                 gender: ''
             }
         }
+    },
+    created() {
+        const user = this.dashboardStore.loggedInUser();
+        this.formData.name = user.name;
+        this.formData.email = user.email;
+
     },
     computed: {
         course() {
@@ -109,7 +115,7 @@ export default {
             return ['Male', 'Female', 'Prefer not to say'];
         },
         user() {
-            return () => { return Auth.User() || {};}
+            return Auth.User()
         }
     },
     methods: {
@@ -118,21 +124,12 @@ export default {
                 course: this.course.id,
                 payment: 'Pending',
                 status: 'New',
-                applicant: '',
+                applicant: this.user.id,
                 ...this.formData
             }
             const { name, email, ...data} = rawData;
             this.dashboardStore.createApplicationRequest(data);
         }
     },
-    watch:{
-        user(newValue, oldValue) {
-            console.log(newValue, oldValue);
-           if(newValue) {
-            this.formData.name = newValue.name;
-            this.formData.email = newValue.email;
-           }
-        }
-    }
 }
 </script>

@@ -1,5 +1,5 @@
 <script>
-import { useDashboardStore, useSetupStore } from '@/store.js';
+import { useDashboardStore, useSetupStore } from '@/store';
 import { APPNAME } from '@/environment';
 import { formattingMixin } from '@/mixins';
 export default {

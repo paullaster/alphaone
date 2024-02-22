@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { _request } from "@/http";
 import { useGlobalStore } from "./useGlobal";
 import constants from "./constants";
+import { Auth } from "../utils";
 
 export const useDashboardStore = defineStore('dashboard', {
     state() {
@@ -77,6 +78,7 @@ export const useDashboardStore = defineStore('dashboard', {
                     this.setDashboardLoader(false);
                     this.toast.success(res?.message);
                     this.getApplicationRequest();
+                    this.router.push({name: 'applications'});
                 })
                 .catch((error) => {
                     this.setDashboardLoader(false);
@@ -101,6 +103,9 @@ export const useDashboardStore = defineStore('dashboard', {
                     this.setDashboardLoader(false);
                     this.toast.error(error?.message);
                 });
+        },
+        loggedInUser() {
+            return Auth.User();
         },
     }
 });
