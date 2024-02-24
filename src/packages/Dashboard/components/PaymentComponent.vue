@@ -4,16 +4,15 @@
          <v-dialog
          transition="disalog-bottom-transition"
          width="auto"
+         v-model="paymentDialog"
          >
-            <template>
-               
-            </template>
          </v-dialog>   
         </v-col>
     </v-row>
 </template>
 
 <script>
+import { useDashboardStore } from '@/store';
     export default {
         name: 'PaymentComponent',
         props: {
@@ -21,7 +20,26 @@
                 type: Object,
                 required: true
             }
+        },
+        setup() {
+            const dashboardStore = useDashboardStore();
+
+            return {
+                dashboardStore,
+            }
+        },
+       computed: {
+        paymentDialog: {
+            get() {
+                return this.dashboardStore.paymentDialog;
+            },
+            set(value) {
+                this.dashboardStore.$patch({
+                    paymentDialog: value
+                });
+            }
         }
+       } 
     }
 </script>
 
