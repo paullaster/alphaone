@@ -12,6 +12,9 @@
           :items="applications"
           class="elevation-1"
         >
+         <template v-slot:item.course="{ item }">
+            <span>{{ getCourseName(item) }}</span>
+         </template>
           <template v-slot:item.amount="{ item }">
             <span>KES. {{ item.amount }}</span>
           </template>
