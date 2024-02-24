@@ -24,7 +24,7 @@
           <template v-slot:item.actions="{ item }">
             <v-icon small class="mr-2" @click="editItem(item)" icon="mdi-file-edit"></v-icon>
             <v-icon small class="mr-2" @click="deleteItem(item)" icon="mdi-delete"></v-icon>
-            <v-icon small @click="payNow(item)" icon="mdi-cash-100"></v-icon>
+            <v-icon small color="primary" @click="payNow(item)" icon="mdi-cash-100"></v-icon>
           </template>
         </v-data-table>
       </v-card-text>

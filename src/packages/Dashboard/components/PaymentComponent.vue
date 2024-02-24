@@ -29,6 +29,7 @@
                       type="tel"
                       required
                       :rules="phoneRules"
+                      hints="Please enter M-PESA registered phone number that you want to use to make payments"
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" sm="12">
@@ -67,9 +68,9 @@ export default {
       required: true,
     },
     selectedCourse: {
-        type: Object,
-        required: true,
-    }
+      type: Object,
+      required: true,
+    },
   },
   setup() {
     const dashboardStore = useDashboardStore();
@@ -80,27 +81,19 @@ export default {
   },
   data() {
     return {
-        phoneRules: [
-            value => {
-                if (value.length < 10) {
-                    this.toast.error("Phone number should have at least 10 digits")
-                    return false;
-                };
-                if (!value) {
-                    this.toast.error("Phone number is required");
-                    return false;
-                };
-                return true;
-            }
-        ],
-        formData: {
-            Amount: null,
-            phoneNumber: null,
-            TransactionType: "CustomerPayBillOnline", 
-            TransactionDesc: null,
-            applicationCode: null,
-        }
-    }
+      phoneRules: [
+        (value) => !!value || 'Phone number is required',
+        (value) => value.length >= 10 || 'Phone number must be at least 10 digits',
+        (value) => value.length <= 25 || 'Phone number can not be more than 25 digits',
+      ],
+      formData: {
+        Amount: null,
+        phoneNumber: null,
+        TransactionType: "CustomerPayBillOnline",
+        TransactionDesc: null,
+        applicationCode: null,
+      },
+    };
   },
   computed: {
     paymentDialog: {
@@ -132,17 +125,13 @@ export default {
     },
   },
   methods: {
-    async initiatePayment () {
-        try {
-            const { valid } = await this.$refs.form.validate();
-            if (!valid) {
-                console.log(" Valid value  ", valid);
-                throw new Error(" Invalid form data!");
-            }
-        } catch (error) {
-            this.toast.error(error.message);
-        }
-    }
+    async initiatePayment() {
+      const { valid } = await this.$refs.form.validate();
+      if (!valid) {
+        console.log(" Valid value  ", valid);
+        throw new Error(" Invalid form data!");
+      }
+    },
   },
 };
 </script>
