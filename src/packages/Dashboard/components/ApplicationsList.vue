@@ -12,7 +12,12 @@
           :items="applications"
           class="elevation-1"
         >
-            
+          <template v-slot:item.amount="{ item }">
+            <span>KES. {{ item.amount }}</span>
+          </template>
+          <template v-slot:item.balance="{ item }">
+            <span>KES. {{ item.balance }}</span>
+          </template>
           <template v-slot:item.actions="{ item }">
             <v-icon small class="mr-2" @click="editItem(item)" icon="mdi-file-edit"></v-icon>
             <v-icon small class="mr-2" @click="deleteItem(item)" icon="mdi-delete"></v-icon>
