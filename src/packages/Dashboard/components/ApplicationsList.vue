@@ -1,6 +1,6 @@
 <template>
    <v-container fluid>
-    <v-card>
+    <v-card height="100dvh" flat>
        <v-card-item>
         <v-card-title>
             <span class="headline">My applications</span>
@@ -30,12 +30,17 @@
       </v-card-text>
     </v-card>
    </v-container>
+   <PaymentComponent :payment="paymentObject"/>
 </template>
 
 <script>
 import  { useDashboardStore } from '@/store';
+import  PaymentComponent from './PaymentComponent.vue';
     export default {
         name: 'ApplicationsList',
+        components: {
+            PaymentComponent
+        },
         beforeRouteEnter (to, from, next) {
             next((v) => {
                 v.dashboardStore.getApplicationRequest();
@@ -48,6 +53,10 @@ import  { useDashboardStore } from '@/store';
                 dashboardStore
             };
         },
+        data() {
+            return {
+                paymentObject: null,
+        }},
         computed: {
             headers: {
                 get() {
@@ -89,7 +98,12 @@ import  { useDashboardStore } from '@/store';
                 return foundCourse?.name;
             },
             payNow(application) {
-                
+                if (Object.keys(application).length) {
+                    this.dashboardStore.$patch({
+                        paymentDialog: true,
+                    });
+                    this.paymentObject = application;
+                }
             }
         }
     }
