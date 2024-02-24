@@ -19,11 +19,12 @@
             <v-card-actions class="justify-end">
               <v-btn
                 color="primary"
+                variant="flat"
                 @click="initiatePayment"
               >Pay (KES. {{ payment?.balance }}) now</v-btn>
               <v-btn
                 variant="text"
-                @click="paymentDialog = false"
+                @click="isActive.value = false"
               >Close</v-btn>
             </v-card-actions>
           </v-card>
