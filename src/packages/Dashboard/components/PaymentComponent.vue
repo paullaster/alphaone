@@ -29,7 +29,7 @@
                       type="tel"
                       required
                       :rules="phoneRules"
-                      hints="Please enter M-PESA registered phone number that you want to use to make payments"
+                      placeholder="Please enter M-PESA registered number for payments"
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" sm="12">
