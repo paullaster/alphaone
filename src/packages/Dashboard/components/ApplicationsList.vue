@@ -89,13 +89,8 @@ import  PaymentComponent from './PaymentComponent.vue';
                     if (oldApplication !== newApplication) {
                         this.dashboardStore.coursesList();
                     };
-                },
-                deep: true
-            },
-            applicationList: {
-                handler(existingApplications) {
-                    if (existingApplications) {
-                        this.applicationList = existingApplications?.filter(app => app.balance > 0);
+                    if (newApplication) {
+                        this.applicationList = newApplication?.filter(app => app.balance > 0);
                     }
                 },
                 deep: true
