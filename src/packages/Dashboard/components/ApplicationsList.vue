@@ -123,8 +123,8 @@ import  PaymentComponent from './PaymentComponent.vue';
                 this.dashboardStore.initiateNIPushAPI(payload);
             },
             deleteItem(item) {
-                
-            }
+
+            },
         }
     }
 </script>

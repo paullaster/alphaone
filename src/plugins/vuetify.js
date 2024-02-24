@@ -19,9 +19,10 @@ export default createVuetify({
           secondary: '#01579B',
           accent: '#212121',
           error: '#D50000',
-          info: '#2196f3',
-          success: '#4caf50',
+          info: '#7C4DFF',
+          success: '#76FF03',
           danger: '#FF1744',
+          customwhite: '#E3F2FD'
         }
       },
     }
