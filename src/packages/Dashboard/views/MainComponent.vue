@@ -80,7 +80,7 @@ export default {
             <v-col v-for="course in coursesList" :key="course.id" :cols="cols[0]">
                 <v-card :loading="loading" class="mx-auto my-12" max-width="374">
                     <template v-slot:loader="{ isActive }">
-                        <v-progress-linear :active="isActive" color="deep-purple" height="4"
+                        <v-progress-linear :active="isActive" color="accent" height="4"
                             indeterminate></v-progress-linear>
                     </template>
                     <v-img cover height="250" :src="getImage(course.id)"></v-img>
