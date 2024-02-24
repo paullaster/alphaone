@@ -118,7 +118,7 @@ export const useDashboardStore = defineStore('dashboard', {
                 .then((res) => {
                     this.setDashboardLoader(false);
                     this.toast.success(res?.data?.CustomerMessage);
-                    setTimeout(this.toast.success('Please check your phone to complete payment!'), 3000);
+                    setTimeout(this.toast.success('Please check your phone to complete payment!'), 5000);
                 })
                 .catch((error) => {
                     this.setDashboardLoader(false);
