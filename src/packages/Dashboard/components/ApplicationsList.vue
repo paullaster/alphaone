@@ -57,7 +57,7 @@ import  PaymentComponent from './PaymentComponent.vue';
             return {
                 paymentObject: null,
                 selectedCourse: null,
-                applicationList: null,
+                applicationList: [],
         }},
         computed: {
             headers: {
@@ -95,7 +95,7 @@ import  PaymentComponent from './PaymentComponent.vue';
             applicationList: {
                 handler(existingApplications) {
                     if (existingApplications) {
-                        this.applicationList = existingApplications.filter(app => app.balance > 0);
+                        this.applicationList = existingApplications?.filter(app => app.balance > 0);
                     }
                 },
                 deep: true
