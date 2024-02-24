@@ -79,7 +79,7 @@ export const useDashboardStore = defineStore('dashboard', {
                     this.setDashboardLoader(false);
                     this.toast.success(res?.message);
                     this.getApplicationRequest();
-                    this.router.push({name: 'applications'});
+                    this.router.push({ name: 'applications' });
                 })
                 .catch((error) => {
                     this.setDashboardLoader(false);
@@ -107,6 +107,25 @@ export const useDashboardStore = defineStore('dashboard', {
         },
         loggedInUser() {
             return Auth.User();
+        },
+        initiateNIPushAPI(payload) {
+            this.setDashboardLoader(true);
+            _request({
+                url: constants.nipush,
+                method: 'POST',
+                data: payload,
+            })
+                .then((res) => {
+                    this.setDashboardLoader(false);
+                    this.toast.success(res?.message);
+                    this.$patch({
+                        applications: res.data.rows,
+                    });
+                })
+                .catch((error) => {
+                    this.setDashboardLoader(false);
+                    this.toast.error(error?.message);
+                });
         },
     }
 });
