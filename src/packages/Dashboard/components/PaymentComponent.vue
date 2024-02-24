@@ -60,14 +60,9 @@ export default {
         });
       },
     },
-    course: {
-      get() {
-        return this.dashboardStore.dashboardGetter("course");
-      },
-    },
     dialogToolbarTitle: {
       get() {
-        return `Payment for ${this.course.name}`;
+        return `Payment for ${this.selectedCourse?.name}`;
       },
     },
   },

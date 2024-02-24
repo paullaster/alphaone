@@ -104,7 +104,7 @@ import  PaymentComponent from './PaymentComponent.vue';
                         paymentDialog: true,
                     });
                     this.paymentObject = application;
-                    const selectedCourse = this.coursesList?.find(c => c.id === application.course);
+                    const selectedCourse = this.coursesList?.find(c => c.id === application?.course);
                     this.selectedCourse = selectedCourse;
                 }
             }
