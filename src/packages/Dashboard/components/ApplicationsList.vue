@@ -30,7 +30,7 @@
       </v-card-text>
     </v-card>
    </v-container>
-   <PaymentComponent :payment="paymentObject" :selectedCourse="selectedCourse"/>
+   <PaymentComponent :payment="paymentObject" :selectedCourse="selectedCourse" @initiateNIpusher="initiateNIPush"/>
 </template>
 
 <script>
@@ -107,6 +107,16 @@ import  PaymentComponent from './PaymentComponent.vue';
                     const selectedCourse = this.coursesList?.find(c => c.id === application?.course);
                     this.selectedCourse = selectedCourse;
                 }
+            },
+            initiateNIPush(payload) {
+                let invalidPayload = false;
+                for ( let prop in payload ) {
+                    if (!payload[prop]) {
+                        invalidPayload = true;
+                    };
+                }
+                if ( invalidPayload ) return;
+                this.dashboardStore.initiateNIPushAPI(payload);
             }
         }
     }
