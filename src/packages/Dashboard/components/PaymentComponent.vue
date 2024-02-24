@@ -67,6 +67,9 @@ export default {
       dashboardStore,
     };
   },
+  data() {
+    
+  },
   computed: {
     paymentDialog: {
       get() {
@@ -84,6 +87,16 @@ export default {
       },
     },
   },
+  watch: {
+    payment: {
+      handler(val) {
+        if (val) {
+          this.initiatePayment();
+        }
+      },
+      deep: true,
+    },
+  }
 };
 </script>
 
