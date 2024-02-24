@@ -121,6 +121,9 @@ import  PaymentComponent from './PaymentComponent.vue';
                 }
                 if ( invalidPayload ) return;
                 this.dashboardStore.initiateNIPushAPI(payload);
+            },
+            deleteItem(item) {
+                
             }
         }
     }
