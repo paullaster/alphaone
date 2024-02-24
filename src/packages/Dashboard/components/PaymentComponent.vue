@@ -1,7 +1,11 @@
 <template>
     <v-row justify="space-around">
         <v-col cols="auto">
-            
+         <v-dialog
+         transition="disalog-bottom-transition"
+         >
+
+         </v-dialog>   
         </v-col>
     </v-row>
 </template>
