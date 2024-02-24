@@ -11,7 +11,25 @@
           <v-card>
             <v-toolbar color="primary" :title="dialogToolbarTitle"></v-toolbar>
             <v-card-text>
-              <div class="text-h2 pa-12">Hello world!</div>
+              <v-form>
+                <v-row>
+                  <v-col cols="12" sm="12">
+                    <v-text-field
+                      v-model="paymentDialog.amount"
+                      label="Amount"
+                      type="number"
+                      required
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="12">
+                    <v-text-field
+                      v-model="paymentDialog.description"
+                      label="Description"
+                      required
+                    ></v-text-field>
+                  </v-col>
+                </v-row>
+              </v-form>
             </v-card-text>
             <v-card-actions class="justify-end">
               <v-btn color="primary" variant="flat" @click="initiatePayment"
