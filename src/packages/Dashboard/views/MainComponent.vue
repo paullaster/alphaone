@@ -71,7 +71,7 @@ export default {
 </script>
 
 <template>
-    <v-card>
+    <v-card flat height="auto">
         <v-row class="mb-6">
             <v-col v-for="course in coursesList" :key="course.id" :cols="cols[0]">
                 <v-card :loading="loading" class="mx-auto my-12" max-width="374">
