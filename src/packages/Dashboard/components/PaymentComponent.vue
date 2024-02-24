@@ -128,10 +128,19 @@ export default {
     async initiatePayment() {
       const { valid } = await this.$refs.form.validate();
       if (!valid) {
-        console.log(" Valid value  ", valid);
-        throw new Error(" Invalid form data!");
+        return;
       }
-    },
+      this.$emit('initiateNIpusher', this.formData);
+      this.formData.Amount = null;
+      this.formData.phoneNumber = null;
+      this.formData.TransactionDesc = null;
+      this.formData.applicationCode = null;
+
+      this.dashboardStore.$patch({
+        paymentDialog: false,
+      });
+
+    } 
   },
 };
 </script>
