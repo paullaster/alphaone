@@ -30,7 +30,7 @@
       </v-card-text>
     </v-card>
    </v-container>
-   <PaymentComponent :payment="paymentObject"/>
+   <PaymentComponent :payment="paymentObject" :selectedCourse="selectedCourse"/>
 </template>
 
 <script>
@@ -56,6 +56,7 @@ import  PaymentComponent from './PaymentComponent.vue';
         data() {
             return {
                 paymentObject: null,
+                selectedCourse: null,
         }},
         computed: {
             headers: {
@@ -103,6 +104,8 @@ import  PaymentComponent from './PaymentComponent.vue';
                         paymentDialog: true,
                     });
                     this.paymentObject = application;
+                    const selectedCourse = this.coursesList?.find(c => c.id === application.course);
+                    this.selectedCourse = selectedCourse;
                 }
             }
         }
