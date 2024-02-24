@@ -11,7 +11,7 @@
           <v-card>
             <v-toolbar
               color="primary"
-              title="Opening from the bottom"
+              :title=""
             ></v-toolbar>
             <v-card-text>
               <div class="text-h2 pa-12">Hello world!</div>
@@ -54,15 +54,28 @@ import { useDashboardStore } from '@/store';
        computed: {
         paymentDialog: {
             get() {
-                return this.dashboardStore.paymentDialog;
+                return this.dashboardStore.dashboardGetter('paymentDialog');
             },
             set(value) {
                 this.dashboardStore.$patch({
                     paymentDialog: value
                 });
             }
+        },
+        course: {
+            get() {
+                return this.dashboardStore.dashboardGetter('course');
+            }
         }
-       } 
+       },
+       watch: {
+        payment: {
+            handler(newValue) {
+                this.dashboardStore.getCourse({id: newValue.course});
+            },
+            deep: true
+        }
+       }
     }
 </script>
 
