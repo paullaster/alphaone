@@ -118,7 +118,7 @@ export default {
                         </v-row>
                     </v-card-text>
                     <v-card-actions>
-                        <v-btn color="deep-purple-lighten-2" variant="flat" @click="apply(course.id)">
+                        <v-btn color="secondary" variant="flat" @click="apply(course.id)">
                             Apply
                         </v-btn>
                     </v-card-actions>
