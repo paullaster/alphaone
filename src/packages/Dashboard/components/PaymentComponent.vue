@@ -5,7 +5,9 @@
          transition="disalog-bottom-transition"
          width="auto"
          >
-
+            <template>
+               
+            </template>
          </v-dialog>   
         </v-col>
     </v-row>
