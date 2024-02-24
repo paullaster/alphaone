@@ -9,7 +9,7 @@
       <v-card-text>
         <v-data-table
           :headers="headers"
-          :items="applications"
+          :items="applicationList"
           class="elevation-1"
         >
          <template v-slot:item.course="{ item }">
@@ -57,6 +57,7 @@ import  PaymentComponent from './PaymentComponent.vue';
             return {
                 paymentObject: null,
                 selectedCourse: null,
+                applicationList: null,
         }},
         computed: {
             headers: {
@@ -90,7 +91,15 @@ import  PaymentComponent from './PaymentComponent.vue';
                     };
                 },
                 deep: true
-            }
+            },
+            applicationList: {
+                handler(existingApplications) {
+                    if (existingApplications) {
+                        this.applicationList = existingApplications.filter(app => app.balance > 0);
+                    }
+                },
+                deep: true
+            },
         },
         methods: {
             getCourseName(application) {
