@@ -66,6 +66,11 @@ import  { useDashboardStore } from '@/store';
                     return this.dashboardStore.dashboardGetter('applications');
                 }
             },
+            coursesList: {
+                get() {
+                    return this.dashboardStore.dashboardGetter('courses');
+                },
+            },
         },
         watch: {
             applications: {
@@ -78,7 +83,11 @@ import  { useDashboardStore } from '@/store';
             }
         },
         methods: {
-
+            getCourseName(application) {
+                const { course } = application;
+                const foundCourse = this.coursesList?.find(c => c.id === course);
+                return foundCourse?.name;
+            }
         }
     }
 </script>
