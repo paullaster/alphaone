@@ -79,6 +79,19 @@ export default {
   },
   data() {
     return {
+        phoneRules: [
+            value => {
+                if (value.length < 10) {
+                    this.toast.error("Phone number should have at least 10 digits")
+                    return false;
+                };
+                if (!value) {
+                    this.toast.error("Phone number is required");
+                    return false;
+                };
+                return true;
+            }
+        ],
         formData: {
             Amount: null,
             phoneNumber: null,
@@ -111,7 +124,7 @@ export default {
         if (val) {
           this.formData.Amount = val.balance;
           this.formData.TransactionDesc = this.dialogToolbarTitle;
-          this.formData.phoneNumber = val.id;
+          this.formData.applicationCode = val.id;
         }
       },
       deep: true,
