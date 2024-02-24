@@ -136,10 +136,11 @@ export default {
         try {
             const { valid } = await this.$refs.form.validate();
             if (!valid) {
+                console.log(" Valid value  ", valid);
                 throw new Error(" Invalid form data!");
             }
         } catch (error) {
-            
+            this.toast.error(error.message);
         }
     }
   },
