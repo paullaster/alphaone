@@ -16,12 +16,12 @@ export default createVuetify({
         dark: false,
         colors: {
           primary: '#00C853',
-          secondary: '#424242',
-          accent: '#82b1ff',
-          error: '#b71c1c',
+          secondary: '#01579B',
+          accent: '#212121',
+          error: '#D50000',
           info: '#2196f3',
           success: '#4caf50',
-          danger: '#ff5722',
+          danger: '#FF1744',
         }
       },
     }
