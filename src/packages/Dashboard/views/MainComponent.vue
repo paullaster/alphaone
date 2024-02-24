@@ -19,6 +19,7 @@ export default {
     data() {
         return {
             APPNAME,
+            scrollInvoked: 0,
         }
     },
     mounted() {
@@ -50,6 +51,9 @@ export default {
         },
     },
     methods: {
+        onScroll () {
+        this.scrollInvoked++
+      },
         getImage(courseId) {
             const url = this.images?.find((img) => {
                 return atob(img.sourceID) === courseId
@@ -71,7 +75,7 @@ export default {
 </script>
 
 <template>
-    <v-card flat height="auto">
+    <v-card flat height="auto" class="overflow-y-auto" v-scroll.self="onScroll">
         <v-row class="mb-6">
             <v-col v-for="course in coursesList" :key="course.id" :cols="cols[0]">
                 <v-card :loading="loading" class="mx-auto my-12" max-width="374">
