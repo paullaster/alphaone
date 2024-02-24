@@ -12,6 +12,7 @@
           :items="applications"
           class="elevation-1"
         >
+            
           <template v-slot:item.actions="{ item }">
             <v-icon small class="mr-2" @click="editItem(item)" icon="mdi-file-edit"></v-icon>
             <v-icon small class="mr-2" @click="deleteItem(item)" icon="mdi-delete"></v-icon>
@@ -46,6 +47,8 @@ import  { useDashboardStore } from '@/store';
                         { title: 'Course', key: 'course' },
                         { title: 'Payment status', key: 'payment' },
                         {title: 'Status', key: 'status' },
+                        {title: 'Amount', key: 'amount' },
+                        {title: 'Balance', key: 'balance' },
                         { title: 'Actions', key: 'actions', sortable: false }
                     ]
                 }
