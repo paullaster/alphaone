@@ -3,6 +3,7 @@
         <v-col cols="auto">
          <v-dialog
          transition="disalog-bottom-transition"
+         width="auto"
          >
 
          </v-dialog>   
