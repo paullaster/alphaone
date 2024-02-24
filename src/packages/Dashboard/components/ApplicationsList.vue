@@ -66,6 +66,19 @@ import  { useDashboardStore } from '@/store';
                     return this.dashboardStore.dashboardGetter('applications');
                 }
             },
+        },
+        watch: {
+            applications: {
+                handler(newApplication, oldApplication) {
+                    if (oldApplication !== newApplication) {
+                        this.dashboardStore.coursesList();
+                    };
+                },
+                deep: true
+            }
+        },
+        methods: {
+
         }
     }
 </script>
