@@ -11,6 +11,7 @@ export const useDashboardStore = defineStore('dashboard', {
             courses: [],
             course: {},
             applications: [],
+            paymentDialog: false,
         }
     },
     getters: {
