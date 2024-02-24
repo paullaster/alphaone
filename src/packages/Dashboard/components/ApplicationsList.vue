@@ -87,6 +87,9 @@ import  { useDashboardStore } from '@/store';
                 const { course } = application;
                 const foundCourse = this.coursesList?.find(c => c.id === course);
                 return foundCourse?.name;
+            },
+            payNow(application) {
+                
             }
         }
     }
