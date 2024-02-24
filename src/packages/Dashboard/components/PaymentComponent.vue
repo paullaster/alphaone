@@ -11,7 +11,7 @@
           <v-card>
             <v-toolbar color="primary" :title="dialogToolbarTitle"></v-toolbar>
             <v-card-text>
-              <v-form>
+              <v-form ref="form">
                 <v-row>
                   <v-col cols="12" sm="12">
                     <v-text-field
@@ -28,6 +28,7 @@
                       label="Phone Number"
                       type="tel"
                       required
+                      :rules="phoneRules"
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" sm="12">
@@ -129,7 +130,19 @@ export default {
       },
       deep: true,
     },
-  }
+  },
+  methods: {
+    async initiatePayment () {
+        try {
+            const { valid } = await this.$refs.form.validate();
+            if (!valid) {
+                throw new Error(" Invalid form data!");
+            }
+        } catch (error) {
+            
+        }
+    }
+  },
 };
 </script>
 
