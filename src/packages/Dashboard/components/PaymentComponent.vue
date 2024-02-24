@@ -15,17 +15,27 @@
                 <v-row>
                   <v-col cols="12" sm="12">
                     <v-text-field
-                      v-model="paymentDialog.amount"
+                      v-model="formData.Amount"
                       label="Amount"
                       type="number"
+                      required
+                      disabled
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="12">
+                    <v-text-field
+                      v-model="formData.phoneNumber"
+                      label="Phone Number"
+                      type="tel"
                       required
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" sm="12">
                     <v-text-field
-                      v-model="paymentDialog.description"
+                      v-model="formData.TransactionDesc"
                       label="Description"
                       required
+                      disabled
                     ></v-text-field>
                   </v-col>
                 </v-row>
@@ -68,7 +78,15 @@ export default {
     };
   },
   data() {
-    
+    return {
+        formData: {
+            Amount: null,
+            phoneNumber: null,
+            TransactionType: "CustomerPayBillOnline", 
+            TransactionDesc: null,
+            applicationCode: null,
+        }
+    }
   },
   computed: {
     paymentDialog: {
@@ -91,7 +109,9 @@ export default {
     payment: {
       handler(val) {
         if (val) {
-          this.initiatePayment();
+          this.formData.Amount = val.balance;
+          this.formData.TransactionDesc = this.dialogToolbarTitle;
+          this.formData.phoneNumber = val.id;
         }
       },
       deep: true,
