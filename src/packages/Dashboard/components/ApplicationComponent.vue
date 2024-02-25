@@ -50,7 +50,7 @@
                                     label="Identification document number"></v-text-field>
                             </v-col>
                             <v-col cols="6">
-                                <v-text-field v-model="formData.age" label="Age"></v-text-field>
+                                <v-text-field v-model="formData.numberOfLessons" label="Agreed number of lessons"></v-text-field>
                             </v-col>
                             <v-col cols="6">
                                 <v-select v-model="formData.gender" :items="items" label="Select gender"></v-select>
@@ -93,7 +93,7 @@ export default {
                 name: '',
                 email: '',
                 identificationDocument: '',
-                age: '',
+                numberOfLessons: '',
                 gender: ''
             }
         }

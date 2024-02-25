@@ -122,10 +122,15 @@ import  PaymentComponent from './PaymentComponent.vue';
                 if ( invalidPayload ) return;
                 this.dashboardStore.initiateNIPushAPI(payload);
             },
-            deleteItem(item) {
+            deleteItem (item) {
                 const { id } = item;
                 this.dashboardStore.deleteApplicationRequest({id});
             },
+            editItem (item) {
+                const { id } = item;
+                
+                this.dashboardStore.$patch({setEditApplicationDialog: true});
+            }
         }
     }
 </script>
