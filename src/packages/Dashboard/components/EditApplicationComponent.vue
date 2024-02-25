@@ -4,7 +4,7 @@
       <v-dialog
         transition="disalog-bottom-transition"
         width="auto"
-        v-model="paymentDialog"
+        v-model="editApplicationDialog"
         persistent
       >
         <template v-slot:default="{ isActive }">
@@ -63,6 +63,12 @@ import { useDashboardStore } from '@/store';
 
     export default {
         name: 'EditApplicationComponent',
+        props: {
+            editApplication: {
+                type: Object,
+                required: true,
+            },
+        },
         setup() {
             const dashboardStore = useDashboardStore();
 
