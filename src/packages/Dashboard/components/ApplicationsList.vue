@@ -58,7 +58,7 @@ import  PaymentComponent from './PaymentComponent.vue';
                 paymentObject: null,
                 selectedCourse: null,
                 applicationList: [],
-                
+                applicationToEdit: null,
         }},
         computed: {
             headers: {
