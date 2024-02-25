@@ -1,7 +1,5 @@
 <template>
-    <div>
-
-    </div>
+    <v-img :src="alphaoneLogo"> </v-img>
 </template>
 
 <script>
