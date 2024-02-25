@@ -116,11 +116,11 @@ export default {
     },
   },
   setup() {
-    const dashboardStore = useDashboardStore();
-
-    return {
-      dashboardStore,
-    };
+      const dashboardStore = useDashboardStore();
+      
+      return {
+          dashboardStore,
+        };
   },
   data() {
     return {
@@ -133,12 +133,17 @@ export default {
         amount: null,
         balance: null,
         course: null,
-      },
-    };
+    },
+};
+},
+created() {
+      const user = this.dashboardStore.loggedInUser();
+      this.formData.name = user.name;
+
   },
-  computed: {
+computed: {
     editApplicationDialog: {
-      get() {
+        get() {
         return this.dashboardStore.dashboardGetter("setEditApplicationDialog");
       },
       set(value) {
@@ -156,7 +161,23 @@ export default {
       },
     },
   },
-  watch: {},
+  watch: {
+    editApplication: {
+        handler(value) {
+          this.formData = {
+            identificationDocument: value.identificationDocument,
+            gender: value.gender,
+            numberOfLessons: value.numberOfLessons,
+            status: value.status,
+            amount: value.amount,
+            balance: value.balance,
+            course: value.course,
+          };
+        },
+        immediate: true,
+        deep: true,
+    }
+  },
   methods: {
     getCourseName(item) {
       const course = this.courses?.find((c) => c.id === item);
