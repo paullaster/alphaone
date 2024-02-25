@@ -128,7 +128,7 @@ import  PaymentComponent from './PaymentComponent.vue';
             },
             editItem (item) {
                 const { id } = item;
-                
+                this.dashboardStore.singleApplicationRequest({id});
                 this.dashboardStore.$patch({setEditApplicationDialog: true});
             }
         }
