@@ -25,5 +25,6 @@ export default {
 .customNavigationDrawerStyles {
     position: fixed !important;
     top: 4.8rem !important;
+
 }
 </style>

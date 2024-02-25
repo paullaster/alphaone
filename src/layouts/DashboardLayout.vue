@@ -51,10 +51,13 @@ export default {
     position: fixed !important;
     padding-top: .8em !important;
     margin-bottom: 8rem;
+
+    .v-app-bar-nav-icon {
+        color: #E3F2FD !important;
+    }
   }
   .appMainContent {
-    margin-top: 5dvh;
-    background-color: red;
+    margin-top: 4.8dvh;
 
   }
 
