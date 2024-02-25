@@ -78,6 +78,13 @@ import { useDashboardStore } from '@/store';
 
             return {
                 dashboardStore,   
+            };
+        },
+        data() {
+            return {
+                formData: {
+                    
+                }
             }
         },
         computed: {
