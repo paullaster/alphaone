@@ -15,21 +15,20 @@
                 <v-row>
                   <v-col cols="12" sm="12">
                     <v-text-field
-                      v-model="formData.Amount"
-                      label="Amount"
-                      type="number"
+                      v-model="formData.name"
+                      label="Applicant Name"
+                      type="text"
                       required
                       disabled
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" sm="12">
                     <v-text-field
-                      v-model="formData.phoneNumber"
-                      label="Phone Number"
-                      type="tel"
+                      v-model="formData.identificationDocument"
+                      label="Identification Document"
+                      type="text"
                       required
-                      :rules="phoneRules"
-                      placeholder="Please enter M-PESA registered number for payments"
+                      :rules="idRules"
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" sm="12">
@@ -83,6 +82,7 @@ import { useDashboardStore } from '@/store';
         data() {
             return {
                 formData: {
+                    name: null,
                     identificationDocument: null,
                     gender: null,
                     numberOfLessons: null,
