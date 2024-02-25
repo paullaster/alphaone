@@ -1,5 +1,5 @@
 <template>
-    <v-card elevation="2" color="#000080" height="100vh" class="d-flex justify-center align-center px-2"
+    <v-card elevation="2" color="primary" height="100vh" class="d-flex justify-center align-center px-2"
         style="position: relative;">
         <v-card-items></v-card-items>
         <v-row>

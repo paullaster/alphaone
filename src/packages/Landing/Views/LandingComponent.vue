@@ -1,6 +1,6 @@
 <template>
     <v-responsive>
-        <v-card color="#000080" height="100vh" flat class="d-flex justify-center align-center">
+        <v-card color="primary" height="100vh" flat class="d-flex justify-center align-center">
             <v-card-actions>
                 <v-btn size="large" rounded="lg" elevation="4" @click="showAuthOption" color="black" class="bg-white">
                     get started
