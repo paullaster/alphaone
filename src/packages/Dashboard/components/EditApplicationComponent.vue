@@ -59,8 +59,27 @@
 </template>
 
 <script>
+import { useDashboardStore } from '@/store';
+
     export default {
-        name: 'EditApplicationComponent'
+        name: 'EditApplicationComponent',
+        setup() {
+            const dashboardStore = useDashboardStore();
+
+            return {
+                dashboardStore,   
+            }
+        },
+        computed: {
+            editApplicationDialog: {
+                get() {
+                    return this.$store.state.editApplicationDialog;
+                },
+                set(value) {
+                    this.$store.commit('setEditApplicationDialog', value);
+                },
+            }
+        }
     }
 </script>
 
