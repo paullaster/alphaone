@@ -18,6 +18,7 @@ export default {
     createApplication: 'applications/apply',
     getApplication: 'applications',
     singleApplication: 'applications/single',
+    updateApplication: 'applications/update',
     delete: 'applications/delete',
 
     // PAYMENTS
