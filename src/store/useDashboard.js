@@ -114,14 +114,14 @@ export const useDashboardStore = defineStore('dashboard', {
                 method: 'GET',
                 params,
             })
-              .then((res) => {
+                .then((res) => {
                     this.setDashboardLoader(false);
                     this.$patch({
                         application: res.data,
                     });
                     this.toast.success(res?.message);
                 })
-              .catch((error) => {
+                .catch((error) => {
                     this.setDashboardLoader(false);
                     this.toast.error(error?.message);
                 });
@@ -146,22 +146,22 @@ export const useDashboardStore = defineStore('dashboard', {
                     this.toast.error(error?.message);
                 });
         },
-        updateApplicationRequest (payload) {
+        updateApplicationRequest(payload) {
             this.setDashboardLoader(true);
             _request({
                 url: constants.updateApplication,
                 method: 'PUT',
                 data: payload,
             })
-            .then((res) => {
-                this.setDashboardLoader(false);
-                this.toast.success(res?.message);
-                this.getApplicationRequest();
-            })
-            .catch((err) => {
-                this.setDashboardLoader(false);
-                this.toast.error(err?.message);
-            });
+                .then((res) => {
+                    this.setDashboardLoader(false);
+                    this.toast.success(res?.message);
+                    this.getApplicationRequest();
+                })
+                .catch((err) => {
+                    this.setDashboardLoader(false);
+                    this.toast.error(err?.message);
+                });
         },
         deleteApplicationRequest(payload) {
             this.setDashboardLoader(true);
@@ -170,12 +170,12 @@ export const useDashboardStore = defineStore('dashboard', {
                 method: 'DELETE',
                 data: payload,
             })
-               .then((res) => {
+                .then((res) => {
                     this.setDashboardLoader(false);
                     this.toast.success(res?.message);
                     this.getApplicationRequest();
                 })
-               .catch((error) => {
+                .catch((error) => {
                     this.setDashboardLoader(false);
                     this.toast.error(error?.message);
                 });
