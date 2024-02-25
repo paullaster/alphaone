@@ -55,6 +55,9 @@ export default {
     .v-app-bar-nav-icon {
         color: #E3F2FD !important;
     }
+    .v-app-bar-title {
+        color: #E3F2FD !important;
+    }
   }
   .appMainContent {
     margin-top: 4.8dvh;
