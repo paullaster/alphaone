@@ -1,5 +1,5 @@
 <template>
-    <v-img :src="alphaoneLogo" alt="Company Logo" :aspect-ratio="1" class="bg-transparent" cover :width="width"> </v-img>
+    <v-img :src="alphaoneLogo" alt="Company Logo" :aspect-ratio="1" class="bg-secondary" cover :width="width" height="20dvh"> </v-img>
 </template>
 
 <script>

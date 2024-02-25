@@ -1,6 +1,6 @@
 <template>
     <v-responsive>
-        <v-card color="secondary" height="100vh" flat class="d-flex flex-column justify-center align-center">
+        <v-card color="secondary" height="100vh" flat class="customLandingPageStyles">
             <v-card-text>
                 <LogoComponent width="150"/>
             </v-card-text>
@@ -34,6 +34,14 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-
+<style lang="scss" scoped>
+ .customLandingPageStyles {
+    display: flex !important;
+    flex-direction: column;
+    & > .v-card-text{
+        background-color: red !important;
+        height: 20px !important;
+        
+    }
+ }
 </style>
