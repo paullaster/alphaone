@@ -37,10 +37,12 @@
 <script>
 import  { useDashboardStore } from '@/store';
 import  PaymentComponent from './PaymentComponent.vue';
+import  EditApplicationComponent from './EditApplicationComponent.vue';
     export default {
         name: 'ApplicationsList',
         components: {
-            PaymentComponent
+            PaymentComponent,
+            EditApplicationComponent,
         },
         beforeRouteEnter (to, from, next) {
             next((v) => {
