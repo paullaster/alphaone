@@ -83,7 +83,13 @@ import { useDashboardStore } from '@/store';
         data() {
             return {
                 formData: {
-                    
+                    identificationDocument: null,
+                    gender: null,
+                    numberOfLessons: null,
+                    status: null,
+                    amount: null,
+                    balance: null,
+                    course: null,
                 }
             }
         },
