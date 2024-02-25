@@ -66,8 +66,8 @@
                   </v-col>
                   <v-col cols="12" sm="12">
                     <v-text-field
-                      v-model="formData.numberOfLessons"
-                      label="Number of agreed lessons"
+                      v-model="formData.course"
+                      label="Course Applied"
                       required
                     ></v-text-field>
                   </v-col>
