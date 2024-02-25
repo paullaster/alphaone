@@ -75,7 +75,7 @@
               </v-form>
             </v-card-text>
             <v-card-actions class="justify-end">
-              <v-btn color="secondary" variant="flat" @click="initiatePayment"
+              <v-btn color="secondary" variant="flat" @click="initiateUpdateApplication">
                 >Update</v-btn
               >
               <v-btn variant="text" @click="isActive.value = false"
