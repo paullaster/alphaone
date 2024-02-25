@@ -33,10 +33,38 @@
                   </v-col>
                   <v-col cols="12" sm="12">
                     <v-text-field
-                      v-model="formData.TransactionDesc"
-                      label="Description"
+                      v-model="formData.numberOfLessons"
+                      label="Number of agreed lessons"
+                      required
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="12">
+                    <v-text-field
+                      v-model="formData.status"
+                      label="Application Status"
                       required
                       disabled
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="12">
+                    <v-text-field
+                      v-model="formData.numberOfLessons"
+                      label="Number of agreed lessons"
+                      required
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="12">
+                    <v-text-field
+                      v-model="formData.numberOfLessons"
+                      label="Number of agreed lessons"
+                      required
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="12">
+                    <v-text-field
+                      v-model="formData.numberOfLessons"
+                      label="Number of agreed lessons"
+                      required
                     ></v-text-field>
                   </v-col>
                 </v-row>
