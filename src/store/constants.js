@@ -17,6 +17,7 @@ export default {
     // APPLICATION REQUESTS
     createApplication: 'applications/apply',
     getApplication: 'applications',
+    delete: 'applications/delete',
 
     // PAYMENTS
     nipush: 'payment/mpesa/nipush',
