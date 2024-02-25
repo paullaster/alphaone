@@ -82,6 +82,11 @@ import  PaymentComponent from './PaymentComponent.vue';
                     return this.dashboardStore.dashboardGetter('courses');
                 },
             },
+            application: {
+                get() {
+                    return this.dashboardStore.dashboardGetter('application');
+                },
+            }
         },
         watch: {
             applications: {
