@@ -13,7 +13,7 @@
         </template>
       </v-app-bar>
       <SidebarDrawer v-show="viewSidebar" />
-      <v-main>
+      <v-main class="appMainContent">
         <router-view name="view"></router-view>
       </v-main>
     </v-layout>
@@ -51,5 +51,18 @@ export default {
     position: fixed !important;
     padding-top: .8em !important;
   }
+
+  @media screen and (min-width: 900px) {
+    
+
+    .appMainContent {
+        grid-area: appMainContent !important;
+    }
+    .customAppBarStyles {
+        grid-area: appHeader!important;
+    }
+
+  }
+
 }
 </style>

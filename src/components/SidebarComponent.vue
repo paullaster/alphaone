@@ -24,5 +24,9 @@ export default {
 <style lang="scss" scoped>
 .customNavigationDrawerStyles {
     position: fixed !important;
+
+    @media  screen and (min-width: 900){
+        grid-area: sidebar;
+    }
 }
 </style>
