@@ -39,6 +39,7 @@
                       v-model="formData.numberOfLessons"
                       label="Number of agreed lessons"
                       required
+                      :rules="numberOfLessonsRules"
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" sm="12">
@@ -124,9 +125,8 @@ export default {
   },
   data() {
     return {
-        idRules: [ 
-            v => !!v || 'Identification Document is required',
-        ],
+      idRules: [(v) => !!v || "Identification Document is required"],
+      numberOfLessonsRules: [(v) => !!v || "Number of lessons is required"],
       formData: {
         name: null,
         identificationDocument: null,
@@ -189,12 +189,12 @@ export default {
       return course?.name;
     },
     initiateUpdateApplication() {
-        this.$refs.form.validate().then((valid) => {
-          if (valid) {
-            this.updateApplication();
-          }
-        });
-    }
+      this.$refs.form.validate().then((valid) => {
+        if (valid) {
+          this.updateApplication();
+        }
+      });
+    },
   },
 };
 </script>
