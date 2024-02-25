@@ -58,6 +58,7 @@ import  PaymentComponent from './PaymentComponent.vue';
                 paymentObject: null,
                 selectedCourse: null,
                 applicationList: [],
+                
         }},
         computed: {
             headers: {
@@ -100,6 +101,14 @@ import  PaymentComponent from './PaymentComponent.vue';
                 },
                 deep: true
             },
+            application: {
+                handler(application) {
+                    if (application) {
+                         this.applicationToEdit = application;
+                    };
+                },
+                deep: true,
+            }
         },
         methods: {
             getCourseName(application) {
