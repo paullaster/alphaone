@@ -2,7 +2,7 @@
   <v-responsive>
     <v-card color="secondary" flat class="customLandingPageStyles">
       <div class="logo">
-        <LogoComponent width="150" color="customwhite"/>
+        <LogoComponent width="150" color="secondary"/>
       </div>
       <v-card-actions>
         <v-btn

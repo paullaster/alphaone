@@ -1,5 +1,5 @@
 <template>
-    <v-img :src="alphaoneLogo" alt="Company Logo" :color="color" :aspect-ratio="1" :width="width" height="20dvh"> </v-img>
+    <v-img :src="alphaoneLogo" alt="Company Logo" :color="color" :aspect-ratio="1" :width="width" height="20dvh" class="customLogo"> </v-img>
 </template>
 
 <script>
@@ -25,5 +25,8 @@ import alphaoneLogo from '@/assets/images/alphaone-logo.svg';
 </script>
 
 <style lang="scss" scoped>
-
+ .customLogo {
+    box-shadow: .1rem .1rem .2rem .4rem rgba(0, 0, 0, 0.11);
+    border-radius: .8rem;
+ }
 </style>
