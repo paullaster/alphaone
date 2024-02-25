@@ -70,7 +70,9 @@
                   <v-col cols="12" sm="12">
                     <v-select
                       v-model="formData.course"
-                      :items="items"
+                      :items="courses"
+                      item-title="name"
+                      item-value="id"
                       label="Course Applied"
                       required
                     ></v-select>
@@ -84,7 +86,8 @@
                 variant="flat"
                 @click="initiateUpdateApplication"
               >
-                >Update</v-btn
+              <v-icon icon=""></v-icon>
+                Update</v-btn
               >
               <v-btn variant="text" @click="isActive.value = false"
                 >Close</v-btn
