@@ -1,5 +1,5 @@
 <template>
-    <v-card elevation="2" color="primary" height="100vh" class="d-flex justify-center align-center px-2"
+    <v-card elevation="2" color="secondary" height="100vh" class="d-flex justify-center align-center px-2"
         style="position: relative;">
         <v-card-items></v-card-items>
         <v-row>
@@ -12,7 +12,7 @@
                                 v-model="formData[option.value]"></v-text-field>
                         </v-col>
                         <v-col cols="12">
-                            <v-btn block class="transparent" @click="authAction">
+                            <v-btn block class="transparent text-customwhite" color="primary" @click="authAction">
                                 {{ authOption?.button?.caption }}
                             </v-btn>
                         </v-col>
@@ -25,7 +25,7 @@
                 </v-btn>
             </v-cols>
         </v-row>
-        <v-btn icon="mdi-arrow-left" class="backBtnPosition" @click="$router.back()"
+        <v-btn icon="mdi-arrow-left" class="backBtnPosition text-customwhite" color="secondary" @click="$router.back()"
             v-if="authOption.type !== 'confirm'"></v-btn>
     </v-card>
 </template>
