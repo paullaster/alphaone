@@ -1,6 +1,6 @@
 <template>
     <v-responsive>
-        <v-card color="secondary" height="100vh" flat class="d-flex justify-center align-center">
+        <v-card color="secondary" height="100vh" flat class="d-flex flex-column justify-center align-center">
             <v-card-text>
                 <LogoComponent />
             </v-card-text>
