@@ -73,10 +73,10 @@ import { useDashboardStore } from '@/store';
         computed: {
             editApplicationDialog: {
                 get() {
-                    return this.$store.state.editApplicationDialog;
+                    return this.dashboardStore.dashboardGetter('setEditApplicationDialog');
                 },
                 set(value) {
-                    this.$store.commit('setEditApplicationDialog', value);
+                    this.dashboardStore.$patch({setEditApplicationDialog : value});
                 },
             }
         }
