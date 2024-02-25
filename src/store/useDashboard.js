@@ -11,6 +11,7 @@ export const useDashboardStore = defineStore('dashboard', {
             courses: [],
             course: {},
             applications: [],
+            application: {},
             paymentDialog: false,
             setEditApplicationDialog: false,
         }
@@ -102,6 +103,25 @@ export const useDashboardStore = defineStore('dashboard', {
                     });
                 })
                 .catch((error) => {
+                    this.setDashboardLoader(false);
+                    this.toast.error(error?.message);
+                });
+        },
+        singleApplicationRequest(params) {
+            this.setDashboardLoader(true);
+            _request({
+                url: constants.singleApplication,
+                method: 'GET',
+                params,
+            })
+              .then((res) => {
+                    this.setDashboardLoader(false);
+                    this.$patch({
+                        application: res.data,
+                    });
+                    this.toast.success(res?.message);
+                })
+              .catch((error) => {
                     this.setDashboardLoader(false);
                     this.toast.error(error?.message);
                 });
