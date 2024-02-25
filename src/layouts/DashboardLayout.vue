@@ -49,7 +49,7 @@ export default {
   .customAppBarStyles {
     height: 8.8dvh;
     position: fixed !important;
-    
+    padding-top: .8em !important;
   }
 }
 </style>
