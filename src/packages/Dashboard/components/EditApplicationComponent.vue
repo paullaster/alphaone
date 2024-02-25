@@ -68,6 +68,10 @@ import { useDashboardStore } from '@/store';
                 type: Object,
                 required: true,
             },
+            courses: {
+                type: Array,
+                required: true,
+            },
         },
         setup() {
             const dashboardStore = useDashboardStore();
