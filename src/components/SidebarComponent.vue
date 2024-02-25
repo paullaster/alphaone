@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer >
+    <v-navigation-drawer class="customNavigationDrawerStyles" >
         <v-list>
             <v-list-item prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg" title="Sandra Adams"
                 subtitle="sandra_a88@gmailcom"></v-list-item>
@@ -21,4 +21,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.customNavigationDrawerStyles {
+    position: fixed !important;
+}
+</style>
