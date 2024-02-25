@@ -124,7 +124,7 @@ import  PaymentComponent from './PaymentComponent.vue';
             },
             deleteItem(item) {
                 const { id } = item;
-                this.dashboardStore.deleteApplication({id});
+                this.dashboardStore.deleteApplicationRequest({id});
             },
         }
     }
