@@ -9,7 +9,7 @@
       >
         <template v-slot:default="{ isActive }">
           <v-card>
-            <v-toolbar color="primary" :title="dialogToolbarTitle"></v-toolbar>
+            <v-toolbar color="secondary" :title="dialogToolbarTitle"></v-toolbar>
             <v-card-text>
               <v-form ref="form">
                 <v-row>
@@ -44,7 +44,7 @@
               </v-form>
             </v-card-text>
             <v-card-actions class="justify-end">
-              <v-btn color="primary" variant="flat" @click="initiatePayment"
+              <v-btn color="secondary" variant="flat" @click="initiatePayment"
                 >Pay (KES. {{ payment?.balance }}) now</v-btn
               >
               <v-btn variant="text" @click="isActive.value = false"

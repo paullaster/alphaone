@@ -136,7 +136,7 @@ import { useDashboardStore } from '@/store';
             },
             dialogToolbarTitle: {
                 get() {
-                    return `Edit application for ${getCourseName(this.editApplication?.course)}this.dashboardStore.dashboardGetter('setDialogToolbarTitle')`;
+                    return `Edit application for ${this.getCourseName(this.editApplication?.course)}`;
                 },
                 set(value) {
                     this.dashboardStore.$patch({setDialogToolbarTitle : value});
