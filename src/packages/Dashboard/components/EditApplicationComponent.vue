@@ -130,6 +130,7 @@ export default {
       numberOfLessonsRules: [(v) => !!v || "Number of lessons is required"],
       courseRules: [(v) => !!v || "Course is required"],
       formData: {
+        id: null,
         name: null,
         identificationDocument: null,
         gender: null,
@@ -141,8 +142,9 @@ export default {
       },
     };
   },
-  created() {
+  mouted() {
     const user = this.dashboardStore.loggedInUser();
+    console.log(user);
     this.formData.name = user.name;
   },
   computed: {
@@ -170,6 +172,7 @@ export default {
       handler(value) {
         if (value) {
           this.formData = {
+            id: value.id,
             name: value.name,
             identificationDocument: value.identificationDocument,
             gender: value.gender,
