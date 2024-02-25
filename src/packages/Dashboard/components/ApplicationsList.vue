@@ -147,6 +147,17 @@ import  EditApplicationComponent from './EditApplicationComponent.vue';
                 const { id } = item;
                 this.dashboardStore.singleApplicationRequest({id});
                 this.dashboardStore.$patch({setEditApplicationDialog: true});
+            },
+            updateApplication(application) {
+                const {name, ...updatedData} = application;
+                let invalidPayload = false;
+                for ( let prop in updatedData ) {
+                    if (!updatedData[prop]) {
+                        invalidPayload = true;
+                    };
+                }
+                if ( invalidPayload ) return;
+                this.dashboardStore.updateApplicationRequest(updatedData);
             }
         }
     }

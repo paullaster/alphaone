@@ -146,6 +146,23 @@ export const useDashboardStore = defineStore('dashboard', {
                     this.toast.error(error?.message);
                 });
         },
+        updateApplicationRequest (payload) {
+            this.setDashboardLoader(true);
+            _request({
+                url: constants.updateApplication,
+                method: 'PUT',
+                data: payload,
+            })
+            .then((res) => {
+                this.setDashboardLoader(false);
+                this.toast.success(res?.message);
+                this.getApplicationRequest();
+            })
+            .catch((err) => {
+                this.setDashboardLoader(false);
+                this.toast.error(err?.message);
+            });
+        },
         deleteApplicationRequest(payload) {
             this.setDashboardLoader(true);
             _request({
