@@ -165,6 +165,7 @@ export default {
       handler(value) {
         if (value) {
           this.formData = {
+            name: value.name,
             identificationDocument: value.identificationDocument,
             gender: value.gender,
             numberOfLessons: value.numberOfLessons,
