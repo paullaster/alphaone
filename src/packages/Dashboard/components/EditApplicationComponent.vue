@@ -193,7 +193,7 @@ export default {
     initiateUpdateApplication() {
       this.$refs.form.validate().then((valid) => {
         if (valid) {
-          this.updateApplication();
+          this.$emit('initiateUpdateApplication', this.formData);
         }
       });
     },
