@@ -1,12 +1,15 @@
 <template>
   <v-card class="custom-height mx-auto">
     <v-layout>
-      <v-app-bar color="primary" density="compact" class="customAppBarStyles" >
+      <v-app-bar color="secondary" density="compact" class="customAppBarStyles" >
         <template v-slot:prepend>
           <v-app-bar-nav-icon @click="toggleSidebar"></v-app-bar-nav-icon>
         </template>
 
-        <v-app-bar-title >{{ APPNAME }}</v-app-bar-title>
+        <v-app-bar-title >
+            <v-img src=""></v-img>
+            {{ APPNAME }}
+        </v-app-bar-title>
 
         <template v-slot:append>
           <v-btn icon="mdi-dots-vertical" color="customwhite"></v-btn>
