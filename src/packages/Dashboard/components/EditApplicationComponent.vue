@@ -48,16 +48,20 @@
                   </v-col>
                   <v-col cols="12" sm="12">
                     <v-text-field
-                      v-model="formData.numberOfLessons"
-                      label="Number of agreed lessons"
+                      v-model="formData.amount"
+                      label="Total Fees charged"
                       required
+                      aria-disabled="true"
+                      disabled
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" sm="12">
                     <v-text-field
-                      v-model="formData.numberOfLessons"
-                      label="Number of agreed lessons"
+                      v-model="formData.balance"
+                      label="Remain amount to pay (Your balance)"
                       required
+                      aria-disabled="true"
+                      disabled
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" sm="12">
