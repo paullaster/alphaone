@@ -86,7 +86,7 @@
                 variant="flat"
                 @click="initiateUpdateApplication"
               >
-              <v-icon icon="mdi-refresh" class="mr-1"></v-icon>
+                <v-icon icon="mdi-refresh" class="mr-1"></v-icon>
                 Update</v-btn
               >
               <v-btn variant="text" @click="isActive.value = false"
@@ -116,11 +116,11 @@ export default {
     },
   },
   setup() {
-      const dashboardStore = useDashboardStore();
-      
-      return {
-          dashboardStore,
-        };
+    const dashboardStore = useDashboardStore();
+
+    return {
+      dashboardStore,
+    };
   },
   data() {
     return {
@@ -133,17 +133,16 @@ export default {
         amount: null,
         balance: null,
         course: null,
-    },
-};
-},
-created() {
-      const user = this.dashboardStore.loggedInUser();
-      this.formData.name = user.name;
-
+      },
+    };
   },
-computed: {
+  created() {
+    const user = this.dashboardStore.loggedInUser();
+    this.formData.name = user.name;
+  },
+  computed: {
     editApplicationDialog: {
-        get() {
+      get() {
         return this.dashboardStore.dashboardGetter("setEditApplicationDialog");
       },
       set(value) {
@@ -163,7 +162,8 @@ computed: {
   },
   watch: {
     editApplication: {
-        handler(value) {
+      handler(value) {
+        if (value) {
           this.formData = {
             identificationDocument: value.identificationDocument,
             gender: value.gender,
@@ -173,10 +173,11 @@ computed: {
             balance: value.balance,
             course: value.course,
           };
-        },
-        immediate: true,
-        deep: true,
-    }
+        }
+      },
+      immediate: true,
+      deep: true,
+    },
   },
   methods: {
     getCourseName(item) {
