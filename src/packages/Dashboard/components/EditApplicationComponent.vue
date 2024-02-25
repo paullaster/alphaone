@@ -86,7 +86,7 @@
                 variant="flat"
                 @click="initiateUpdateApplication"
               >
-              <v-icon icon=""></v-icon>
+              <v-icon icon="mdi-refresh" class="mr-1"></v-icon>
                 Update</v-btn
               >
               <v-btn variant="text" @click="isActive.value = false"
