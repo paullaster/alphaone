@@ -76,6 +76,7 @@
                       item-value="id"
                       label="Course Applied"
                       required
+                      :rules="courseRules"
                     ></v-select>
                   </v-col>
                 </v-row>
@@ -127,6 +128,7 @@ export default {
     return {
       idRules: [(v) => !!v || "Identification Document is required"],
       numberOfLessonsRules: [(v) => !!v || "Number of lessons is required"],
+      courseRules: [(v) => !!v || "Course is required"],
       formData: {
         name: null,
         identificationDocument: null,
