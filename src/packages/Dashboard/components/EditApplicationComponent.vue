@@ -1,5 +1,5 @@
 <template>
-   <v-row justify="space-around">
+  <v-row justify="space-around">
     <v-col cols="auto">
       <v-dialog
         transition="disalog-bottom-transition"
@@ -9,7 +9,10 @@
       >
         <template v-slot:default="{ isActive }">
           <v-card>
-            <v-toolbar color="secondary" :title="dialogToolbarTitle"></v-toolbar>
+            <v-toolbar
+              color="secondary"
+              :title="dialogToolbarTitle"
+            ></v-toolbar>
             <v-card-text>
               <v-form ref="form">
                 <v-row>
@@ -65,17 +68,22 @@
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" sm="12">
-                    <v-text-field
+                    <v-select
                       v-model="formData.course"
+                      :items="items"
                       label="Course Applied"
                       required
-                    ></v-text-field>
+                    ></v-select>
                   </v-col>
                 </v-row>
               </v-form>
             </v-card-text>
             <v-card-actions class="justify-end">
-              <v-btn color="secondary" variant="flat" @click="initiateUpdateApplication">
+              <v-btn
+                color="secondary"
+                variant="flat"
+                @click="initiateUpdateApplication"
+              >
                 >Update</v-btn
               >
               <v-btn variant="text" @click="isActive.value = false"
@@ -90,71 +98,70 @@
 </template>
 
 <script>
-import { useDashboardStore } from '@/store';
+import { useDashboardStore } from "@/store";
 
-    export default {
-        name: 'EditApplicationComponent',
-        props: {
-            editApplication: {
-                type: Object,
-                required: true,
-            },
-            courses: {
-                type: Array,
-                required: true,
-            },
-        },
-        setup() {
-            const dashboardStore = useDashboardStore();
+export default {
+  name: "EditApplicationComponent",
+  props: {
+    editApplication: {
+      type: Object,
+      required: true,
+    },
+    courses: {
+      type: Array,
+      required: true,
+    },
+  },
+  setup() {
+    const dashboardStore = useDashboardStore();
 
-            return {
-                dashboardStore,   
-            };
-        },
-        data() {
-            return {
-                formData: {
-                    name: null,
-                    identificationDocument: null,
-                    gender: null,
-                    numberOfLessons: null,
-                    status: null,
-                    amount: null,
-                    balance: null,
-                    course: null,
-                }
-            }
-        },
-        computed: {
-            editApplicationDialog: {
-                get() {
-                    return this.dashboardStore.dashboardGetter('setEditApplicationDialog');
-                },
-                set(value) {
-                    this.dashboardStore.$patch({setEditApplicationDialog : value});
-                },
-            },
-            dialogToolbarTitle: {
-                get() {
-                    return `Edit application for ${this.getCourseName(this.editApplication?.course)}`;
-                },
-                set(value) {
-                    this.dashboardStore.$patch({setDialogToolbarTitle : value});
-                },
-            },
-        },
-        watch: {
-
-        },
-        methods: {
-            getCourseName (item) {
-                const course = this.courses?.find(c => c.id === item);
-                return course?.name;
-            }
-        }
-    }
+    return {
+      dashboardStore,
+    };
+  },
+  data() {
+    return {
+      formData: {
+        name: null,
+        identificationDocument: null,
+        gender: null,
+        numberOfLessons: null,
+        status: null,
+        amount: null,
+        balance: null,
+        course: null,
+      },
+    };
+  },
+  computed: {
+    editApplicationDialog: {
+      get() {
+        return this.dashboardStore.dashboardGetter("setEditApplicationDialog");
+      },
+      set(value) {
+        this.dashboardStore.$patch({ setEditApplicationDialog: value });
+      },
+    },
+    dialogToolbarTitle: {
+      get() {
+        return `Edit application for ${this.getCourseName(
+          this.editApplication?.course
+        )}`;
+      },
+      set(value) {
+        this.dashboardStore.$patch({ setDialogToolbarTitle: value });
+      },
+    },
+  },
+  watch: {},
+  methods: {
+    getCourseName(item) {
+      const course = this.courses?.find((c) => c.id === item);
+      return course?.name;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>
