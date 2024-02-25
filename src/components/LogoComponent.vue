@@ -1,11 +1,17 @@
 <template>
-    <v-img :src="alphaoneLogo" alt="Company Logo" :aspect-ratio="1" class="bg-transparent" cover width="300"> </v-img>
+    <v-img :src="alphaoneLogo" alt="Company Logo" :aspect-ratio="1" class="bg-transparent" cover :width="width"> </v-img>
 </template>
 
 <script>
 import alphaoneLogo from '@/assets/images/alphaone-logo.svg';
     export default {
         name: 'LogoComponent',
+        props: {
+            width: {
+                type: String,
+                default: '300'
+            }
+        },
         data() {
             return {
                 alphaoneLogo

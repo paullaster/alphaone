@@ -2,7 +2,7 @@
     <v-responsive>
         <v-card color="secondary" height="100vh" flat class="d-flex flex-column justify-center align-center">
             <v-card-text>
-                <LogoComponent />
+                <LogoComponent width="150"/>
             </v-card-text>
             <v-card-actions>
                 <v-btn size="large" rounded="lg" elevation="4" @click="showAuthOption" class="bg-primary text-customwhite">
