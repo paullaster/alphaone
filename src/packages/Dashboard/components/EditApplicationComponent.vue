@@ -143,6 +143,9 @@ import { useDashboardStore } from '@/store';
                 },
             },
         },
+        watch: {
+
+        },
         methods: {
             getCourseName (item) {
                 const course = this.courses?.find(c => c.id === item);
