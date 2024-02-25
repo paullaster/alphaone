@@ -50,19 +50,25 @@ export default {
     height: 8.8dvh;
     position: fixed !important;
     padding-top: .8em !important;
+    margin-bottom: 8rem;
+  }
+  .appMainContent {
+    margin-top: 5dvh;
+    background-color: red;
+
   }
 
-  @media screen and (min-width: 900px) {
+//   @media screen and (min-width: 900px) {
     
 
-    .appMainContent {
-        grid-area: appMainContent !important;
-    }
-    .customAppBarStyles {
-        grid-area: appHeader!important;
-    }
+//     .appMainContent {
+//         grid-area: appMainContent !important;
+//     }
+//     .customAppBarStyles {
+//         grid-area: appHeader!important;
+//     }
 
-  }
+//   }
 
 }
 </style>

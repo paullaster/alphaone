@@ -24,6 +24,6 @@ export default {
 <style lang="scss" scoped>
 .customNavigationDrawerStyles {
     position: fixed !important;
-    top: 5.2rem !important;
+    top: 4.8rem !important;
 }
 </style>
