@@ -84,6 +84,14 @@ import { useDashboardStore } from '@/store';
                 set(value) {
                     this.dashboardStore.$patch({setEditApplicationDialog : value});
                 },
+            },
+            dialogToolbarTitle: {
+                get() {
+                    return this.dashboardStore.dashboardGetter('setDialogToolbarTitle');
+                },
+                set(value) {
+                    this.dashboardStore.$patch({setDialogToolbarTitle : value});
+                },
             }
         }
     }
