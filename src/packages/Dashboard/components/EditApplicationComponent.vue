@@ -87,11 +87,17 @@ import { useDashboardStore } from '@/store';
             },
             dialogToolbarTitle: {
                 get() {
-                    return this.dashboardStore.dashboardGetter('setDialogToolbarTitle');
+                    return `Edit application for ${getCourseName(this.editApplication?.course)}this.dashboardStore.dashboardGetter('setDialogToolbarTitle')`;
                 },
                 set(value) {
                     this.dashboardStore.$patch({setDialogToolbarTitle : value});
                 },
+            },
+        },
+        methods: {
+            getCourseName (item) {
+                const course = this.courses?.find(c => c.id === item);
+                return course?.name;
             }
         }
     }
