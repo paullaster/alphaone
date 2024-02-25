@@ -124,6 +124,9 @@ export default {
   },
   data() {
     return {
+        idRules: [ 
+            v => !!v || 'Identification Document is required',
+        ],
       formData: {
         name: null,
         identificationDocument: null,
@@ -185,6 +188,13 @@ export default {
       const course = this.courses?.find((c) => c.id === item);
       return course?.name;
     },
+    initiateUpdateApplication() {
+        this.$refs.form.validate().then((valid) => {
+          if (valid) {
+            this.updateApplication();
+          }
+        });
+    }
   },
 };
 </script>
