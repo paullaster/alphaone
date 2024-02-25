@@ -31,6 +31,7 @@
     </v-card>
    </v-container>
    <PaymentComponent :payment="paymentObject" :selectedCourse="selectedCourse" @initiateNIpusher="initiateNIPush"/>
+   <EditApplicationComponent :editApplication="applicationToEdit" />
 </template>
 
 <script>
