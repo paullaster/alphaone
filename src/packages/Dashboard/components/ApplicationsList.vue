@@ -46,7 +46,7 @@ import  EditApplicationComponent from './EditApplicationComponent.vue';
         },
         beforeRouteEnter (to, from, next) {
             next((v) => {
-                v.dashboardStore.getApplicationRequest();
+                v.dashboardStore.getApplicationRequest({applicant: v.dashboardStore.User.id});
             });
         },
         setup() {

@@ -80,7 +80,7 @@ export const useDashboardStore = defineStore('dashboard', {
                 .then((res) => {
                     this.setDashboardLoader(false);
                     this.toast.success(res?.message);
-                    this.getApplicationRequest();
+                    this.getApplicationRequest({applicant: this.User.id});
                     this.router.push({ name: 'applications' });
                 })
                 .catch((error) => {
@@ -156,7 +156,7 @@ export const useDashboardStore = defineStore('dashboard', {
                 .then((res) => {
                     this.setDashboardLoader(false);
                     this.toast.success(res?.message);
-                    this.getApplicationRequest();
+                    this.getApplicationRequest({applicant: this.User.id});
                 })
                 .catch((err) => {
                     this.setDashboardLoader(false);
@@ -173,7 +173,7 @@ export const useDashboardStore = defineStore('dashboard', {
                 .then((res) => {
                     this.setDashboardLoader(false);
                     this.toast.success(res?.message);
-                    this.getApplicationRequest();
+                    this.getApplicationRequest({applicant: this.User.id});
                 })
                 .catch((error) => {
                     this.setDashboardLoader(false);
