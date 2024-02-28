@@ -46,9 +46,10 @@ import  EditApplicationComponent from './EditApplicationComponent.vue';
         },
         beforeRouteEnter (to, from, next) {
             next((v) => {
-                v.dashboardStore.getApplicationRequest({applicant: v.dashboardStore.User.id});
+                v.dashboardStore.getApplicationRequest({applicant: v.Auth.User()?.id});
             });
         },
+        inject: ['Auth'],
         setup() {
             const dashboardStore = useDashboardStore();
 

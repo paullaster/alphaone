@@ -4,11 +4,13 @@ import router from './router';
 import './style.css';
 import Vue3Toasity from "vue3-toastify";
 import "vue3-toastify/dist/index.css";
-
+import { Auth } from './utils';
 
 
 const AppInstace = createApp(App);
 
+// GLBAL PROVIDERS
+AppInstace.provide('Auth', Auth);
 
 // GLOBAL TOASTER
 AppInstace.use(Vue3Toasity, {
