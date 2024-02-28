@@ -12,7 +12,7 @@
         </v-app-bar-title>
 
         <template v-slot:append>
-          <v-btn icon="mdi-dots-vertical" color="customwhite"></v-btn>
+          <v-btn icon="mdi-view-module" color="customwhite"></v-btn>
         </template>
       </v-app-bar>
       <SidebarDrawer v-show="viewSidebar" />
