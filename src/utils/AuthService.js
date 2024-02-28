@@ -19,7 +19,7 @@ class AuthService {
         return this.token;
     }
     User() {
-        const token = this.getToken().split('.')[1];
+        const token = this.getToken()?.split('.')[1];
         return JSON.parse(atob(token));
     }
 }
