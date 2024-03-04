@@ -5,6 +5,13 @@ import './style.css';
 import Vue3Toasity from "vue3-toastify";
 import "vue3-toastify/dist/index.css";
 import { Auth } from './utils';
+// Vuetify
+import vuetify from './plugins/vuetify';
+import { pinia } from './plugins/pinia';
+//Packages
+import Landing from './packages/Landing';
+import Dashboard from './packages/Dashboard';
+import Courses from './packages/Courses';
 
 
 const AppInstace = createApp(App);
@@ -26,19 +33,14 @@ AppInstace.use(pinia);
 
 
 
-//Packages
-import Landing from './packages/Landing';
 
 
 const option = { router }
 
 AppInstace.use(Landing, option);
 AppInstace.use(Dashboard, option);
+AppInstace.use(Courses, option);
 
-// Vuetify
-import vuetify from './plugins/vuetify';
-import { pinia } from './plugins/pinia';
-import Dashboard from './packages/Dashboard';
 
 
 AppInstace.use(router).use(vuetify).mount('#app');

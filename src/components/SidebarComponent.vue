@@ -17,9 +17,16 @@
 </template>
 
 <script>
+import { useDashboard } from "@/store";
 export default {
     name: 'SidebarDrawer',
     inject: ['Auth'],
+    setup() {
+        const dashboardStore = useDashboard();
+        return {
+            dashboardStore,
+        }
+    },
     methods: {
         test(value) {
             console.log("clicked", value);
