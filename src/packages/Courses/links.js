@@ -2,7 +2,7 @@ import { Auth } from "@/utils"
 
 export default {
     to: `/dashboard/${Auth.User().id}/courses`,
-    order: 2,
+    order: 3,
     icon: 'mdi-cast-education',
     caption: 'Courses',
     hasSublink: false,
