@@ -1,7 +1,6 @@
 import DashboardLayout from '@/layouts/DashboardLayout.vue';
 import MainComponent from './views/MainComponent.vue';
 import ApplicationComponent from './components/ApplicationComponent.vue';
-import ApplicationsList from './components/ApplicationsList.vue';
 
 export default {
     path: '/dashboard/:user',
@@ -22,13 +21,6 @@ export default {
                 view: ApplicationComponent,
             }
         },
-        // {
-        //     path: 'applications',
-        //     name: 'applications',
-        //     components: {
-        //         view: ApplicationsList,
-        //     }
-        // }
     ],
     meta: { requiresAuth: true },
 }
