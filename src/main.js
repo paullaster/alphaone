@@ -12,6 +12,7 @@ import { pinia } from './plugins/pinia';
 import Landing from './packages/Landing';
 import Dashboard from './packages/Dashboard';
 import Courses from './packages/Courses';
+import Applications from './packages/Applications';
 
 
 const AppInstace = createApp(App);
@@ -40,6 +41,7 @@ const option = { router }
 AppInstace.use(Landing, option);
 AppInstace.use(Dashboard, option);
 AppInstace.use(Courses, option);
+AppInstace.use(Applications, option);
 
 
 

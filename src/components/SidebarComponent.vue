@@ -19,7 +19,11 @@
         :key="link.to"
       >
       </v-list-item>
-            <v-list-item prepend-icon="mdi-star" title="History" value="history"></v-list-item> -->
+      <v-list-item
+        prepend-icon="mdi-star"
+        title="History"
+        value="history"
+      ></v-list-item>
     </v-list>
   </v-navigation-drawer>
 </template>
@@ -32,7 +36,7 @@ export default {
   setup() {
     const dashboardStore = useDashboardStore();
     return {
-        dashboardStore,
+      dashboardStore,
     };
   },
   computed: {
