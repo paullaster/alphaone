@@ -27,6 +27,13 @@ export default {
             dashboardStore,
         }
     },
+    computed: {
+        links: {
+            get: function () {
+                return this.dashboardStore.links;
+            },
+        }
+    },
     methods: {
         test(value) {
             console.log("clicked", value);
