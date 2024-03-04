@@ -1,7 +1,9 @@
+import { Auth } from "@/utils"
+
 export default {
-    to: '/dashboard/:user',
-    order: 1,
-    icon: 'mdi-view-module',
-    caption: 'Dashboard',
+    to: `/dashboard/${Auth.User().id}/courses`,
+    order: 2,
+    icon: 'mdi-cast-education',
+    caption: 'Courses',
     hasSublink: false,
 }
