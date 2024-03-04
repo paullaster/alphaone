@@ -1,12 +1,12 @@
 import CoursesList from './views/CoursesList.vue';
 export default {
-    path: '',
+    path: '/dashboard/:user',
     name: 'courses',
     redirect: '/courses',
     meta: { requiresAuth: true },
     children: [
         {
-            path: '/courses',
+            path: 'courses',
             name: 'courses',
             components: {
                 view: CoursesList,

@@ -22,13 +22,13 @@ export default {
                 view: ApplicationComponent,
             }
         },
-        {
-            path: 'applications',
-            name: 'applications',
-            components: {
-                view: ApplicationsList,
-            }
-        }
+        // {
+        //     path: 'applications',
+        //     name: 'applications',
+        //     components: {
+        //         view: ApplicationsList,
+        //     }
+        // }
     ],
     meta: { requiresAuth: true },
 }
