@@ -1,6 +1,8 @@
+import ApplicationsList from "./views/ApplicationsList.vue"
+
 export default {
     path: '',
-    redirect: {name: 'applications'}
+    redirect: {name: 'applications'},
     meta: { requiresAuth: true},
     children: [
         {
