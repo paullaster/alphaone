@@ -1,4 +1,4 @@
-import ApplicationsList from "../Dashboard/components/ApplicationsList.vue";
+import ApplicationsList from "./views/ApplicationsList.vue";
 import DashboardLayout from '@/layouts/DashboardLayout.vue';
 
 export default {

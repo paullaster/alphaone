@@ -1,9 +1,11 @@
 import CoursesList from './views/CoursesList.vue';
+import DashboardLayout from '@/layouts/DashboardLayout.vue';
+
 export default {
     path: '/dashboard/:user',
-    name: 'courses',
-    redirect: '/courses',
+    redirect: {name: 'courses'},
     meta: { requiresAuth: true },
+    component: DashboardLayout,
     children: [
         {
             path: 'courses',
