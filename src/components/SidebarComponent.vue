@@ -15,11 +15,10 @@
         v-for="link in links"
         :prepend-icon="link.icon"
         :title="link.caption"
-        value="applications"
+        :value="link.to"
         :key="link.to"
       >
       </v-list-item>
-      <!-- <v-list-item prepend-icon="mdi-cast-education" title="Courses" value="courses"></v-list-item>
             <v-list-item prepend-icon="mdi-star" title="History" value="history"></v-list-item> -->
     </v-list>
   </v-navigation-drawer>
@@ -39,7 +38,7 @@ export default {
   computed: {
     links: {
       get: function () {
-        return this.dashboardStore.getters("links");
+        return this.dashboardStore.dashboardGetter("links");
       },
     },
   },
