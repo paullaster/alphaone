@@ -1,4 +1,4 @@
-import CoursesList from './views/CoursesList';
+import CoursesList from './views/CoursesList.vue';
 export default {
     path: '',
     name: 'courses',

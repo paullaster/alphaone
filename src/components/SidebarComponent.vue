@@ -26,14 +26,14 @@
 </template>
 
 <script>
-import { useDashboard } from "@/store";
+import { useDashboardStore } from "@/store";
 export default {
   name: "SidebarDrawer",
   inject: ["Auth"],
   setup() {
-    const dashboardStore = useDashboard();
+    const dashboardStore = useDashboardStore();
     return {
-      dashboardStore,
+        dashboardStore,
     };
   },
   computed: {
