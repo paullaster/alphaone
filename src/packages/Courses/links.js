@@ -1,7 +1,5 @@
-import { Auth } from "@/utils"
-
 export default {
-    to: `/dashboard/${Auth.User().id}`,
+    to: '/dashboard/:user',
     order: 1,
     icon: 'mdi-view-module',
     caption: 'Dashboard',

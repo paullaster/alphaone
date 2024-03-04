@@ -8,7 +8,8 @@
         <v-divider></v-divider>
 
         <v-list density="compact" nav>
-            <v-list-item prepend-icon="mdi-folder" title="My Applications" value="applications"></v-list-item>
+            <v-list-item prepend-icon="mdi-folder" title="My Applications" value="applications">
+            </v-list-item>
             <v-list-item prepend-icon="mdi-cast-education" title="Courses" value="courses"></v-list-item>
             <v-list-item prepend-icon="mdi-star" title="History" value="history"></v-list-item>
         </v-list>
@@ -19,6 +20,11 @@
 export default {
     name: 'SidebarDrawer',
     inject: ['Auth'],
+    methods: {
+        test(value) {
+            console.log("clicked", value);
+        }
+    },
 }
 </script>
 
